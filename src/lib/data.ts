@@ -1,3 +1,10 @@
+export const HERO_IDENTIFICATION = ["YuJin Kwon", "권유진"];
+export const HERO_TEXT = [
+  "3년차 열정러",
+  "배움을 향한 열정이 가득한",
+  "사용자 경험을 극대화하는",
+];
+
 export const QUESTION_ANS_ANSWER = [
   {
     key: "question_1",
@@ -16,6 +23,72 @@ export const QUESTION_ANS_ANSWER = [
     question: "앞으로 어떤 개발자가 되고 싶나요?",
     answer:
       "배움을 즐기되, 그걸 팀과 함께 나눌 수 있는 개발자가 되고 싶어요. 실력만 키우는 게 아니라, 나의 고민과 해결 과정을 팀원과 공유하고 함께 성장하는 문화를 만드는 개발자가 되고 싶습니다.",
+  },
+];
+
+export const WORK_EXPERIENCE = [
+  {
+    id: 1,
+    company: "(주)퓨전소프트",
+    role: "Frontend Developer",
+    period: "2022.10 - Present",
+    description:
+      "Vue.js 기반 교육·공공 서비스 UI/UX 최적화, 성능 개선 프로젝트 진행",
+    logoUrl: "/logo/Vue.js.png",
+    projects: [
+      {
+        projectId: 1,
+        title: "국립대구과학관 홈페이지 개편",
+        description:
+          "국립대구과학관 사용자 및 관리자 서비스를 Vue.js 3 기반 프론트엔드와 Spring boot 기반 백엔드로 통합하여 클라우드 환경에 맞춰 고도화를 진행했습니다.",
+        tags: ["Vue.js", "Java", "Spring Boot", "MySQL", "Mybatis"],
+        projectType: "Company",
+        backgroundImgUrl: "/illustration/project_1.png",
+        githubUrl: "",
+        notionUrl: "",
+      },
+      {
+        projectId: 2,
+        title: "에듀넷 티-클리어 클라우드 전환 및 서비스 재구조화",
+        description:
+          "Legacy 기반으로 운영되던 에듀넷 사용자 서비스를 포함한 6개의 서비스를 클라우드 환경에 맞게 구조를 재설계 및 통합 마이그레이션을 진행했습니다.",
+        tags: ["Vue.js", "Java", "Spring Boot", "MySQL", "Mybatis", "MSA"],
+        projectType: "Company",
+        backgroundImgUrl: "/illustration/project_2.png",
+        githubUrl: "",
+        notionUrl: "",
+      },
+      {
+        projectId: 3,
+        title: "title 1",
+        description: "blah",
+        tags: ["Vue.js", "Pinia", "Java", "Spring Boot", "MySQL", "MSA"],
+        projectType: "Company",
+        backgroundImgUrl: "/illustration/developer-icon.png",
+        githubUrl: "",
+        notionUrl: "",
+      },
+      {
+        projectId: 4,
+        title: "title 12",
+        description: "blah",
+        tags: ["Vue.js", "Pinia", "Java", "Spring Boot", "MySQL", "MSA"],
+        projectType: "Company",
+        backgroundImgUrl: "/illustration/developer-icon.png",
+        githubUrl: "",
+        notionUrl: "",
+      },
+      {
+        projectId: 5,
+        title: "title 12",
+        description: "blah",
+        tags: ["Vue.js", "Pinia", "Java", "Spring Boot", "MySQL", "MSA"],
+        projectType: "Company",
+        backgroundImgUrl: "/illustration/developer-icon.png",
+        githubUrl: "",
+        notionUrl: "",
+      },
+    ],
   },
 ];
 export const SKILL_SET = {
