@@ -18,7 +18,7 @@ export default function QuestionCard({ question, answer }: QuestionAnswer) {
         <span className="font-display text-primary text-2xl">Q.</span>{" "}
         {question}
       </h5>
-      <p className="font-display text-base sm:text-lg leading-relaxed text-white/90">
+      <p className="font-display text-base sm:text-lg leading-relaxed text-white/90 text-left">
         {answer}
       </p>
     </motion.div>
