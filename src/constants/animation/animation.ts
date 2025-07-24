@@ -1,4 +1,25 @@
 import type { Variants } from "framer-motion";
+
+export const particleVariants: Variants = {
+  initial: {
+    x: 0,
+    y: 0,
+    scale: 1,
+    opacity: 1,
+  },
+  move: {
+    x: [100, -100, 0],
+    y: [0, 50, 0],
+    scale: [1, 1.2, 1],
+    opacity: [1, 0.5, 1],
+    transition: {
+      duration: 2,
+      ease: "easeInOut",
+      times: [0, 0.5, 1],
+    },
+  },
+};
+
 export const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
   whileInView: { opacity: 1 },
@@ -32,4 +53,26 @@ export const fadeSlideUp: Variants = {
       ease: "easeOut",
     },
   },
+};
+
+export const textContainerVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.05,
+      delayChildren: 0.3,
+    },
+  },
+  exit: {
+    transition: {
+      staggerChildren: 0.03,
+      staggerDirection: -1,
+    },
+  },
+};
+
+export const textVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -20 },
 };
