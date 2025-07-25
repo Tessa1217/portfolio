@@ -3,6 +3,7 @@ import { fadeInUp } from "@/constants/animation/animation";
 import AnimatedSection from "@/components/animation/animated-section";
 import SectionTitle from "@/components/section-title";
 import WorkProjects from "@/components/experience/work-projects";
+import PersonalProjects from "@/components/experience/personal-projects";
 
 const TABS = ["Work Projects", "Personal Projects"] as const;
 
@@ -15,7 +16,7 @@ export default function Experience() {
       id="experience"
       variants={fadeInUp}
       as="section"
-      className="min-h-screen w-full py-20 text-white text-center px-4"
+      className="w-full py-20 text-white text-center px-4 mb-24 "
     >
       <div className="container h-full mx-auto px-6">
         <SectionTitle title="Experience" />
@@ -39,6 +40,7 @@ export default function Experience() {
         </div>
         <div className="container mx-auto px-6 mb-16">
           {activeTab === "Work Projects" && <WorkProjects />}
+          {activeTab === "Personal Projects" && <PersonalProjects />}
         </div>
       </div>
     </AnimatedSection>
