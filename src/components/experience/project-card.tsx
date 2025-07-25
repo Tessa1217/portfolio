@@ -1,18 +1,7 @@
 import { motion } from "framer-motion";
+import { type ProjectInformation } from "@/types";
 import { FaGithub } from "react-icons/fa";
 import { RxNotionLogo } from "react-icons/rx";
-
-export type ProjectCardProps = {
-  projectId: number;
-  title: string;
-  description: string;
-  tags: string[];
-  projectType: "Company" | "Personal";
-  backgroundImgUrl: string;
-  githubUrl?: string;
-  notionUrl?: string;
-  onClick?: () => void;
-};
 
 const hoverEffect = {
   hover: { scale: 1.02, boxShadow: "0 8px 24px rgba(0,0,0,0.2)" },
@@ -25,14 +14,12 @@ export default function ProjectCard({
   projectType,
   backgroundImgUrl,
   githubUrl,
-  notionUrl,
-  onClick,
-}: ProjectCardProps) {
+  notionPageId,
+}: ProjectInformation) {
   return (
     <motion.div
       variants={hoverEffect}
       whileHover="hover"
-      onClick={onClick}
       className="relative min-h-[400px] bg-gray-800 rounded-2xl overflow-hidden cursor-pointer transition-transform duration-200"
     >
       {/* Background Image Overlay */}
@@ -83,9 +70,9 @@ export default function ProjectCard({
               <FaGithub size={20} />
             </a>
           )}
-          {notionUrl && (
+          {notionPageId && (
             <a
-              href={notionUrl}
+              href={notionPageId}
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-200 hover:text-white transition-colors"

@@ -1,10 +1,11 @@
 import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { useInViewAnimation } from "@/hooks/useInViewAnimation";
-import { staggerContainer, fadeSlideUp } from "@/constants/animation/animation";
+import { staggerContainer } from "@/constants/animation/animation";
 import WorkCardList from "@/components/experience/work-card-list";
-import ProjectCard from "@/components/experience/project-card";
+import ProjectCardList from "@/components/experience/project-card-list";
 import { WORK_EXPERIENCE } from "@/lib/data";
+import type { ProjectInformation } from "@/types";
 
 type WorkItem = (typeof WORK_EXPERIENCE)[number];
 
@@ -17,7 +18,7 @@ export default function WorkProjects() {
   const projects = useMemo(
     () => WORK_EXPERIENCE.find((w) => w.id === selectedWorkId)?.projects ?? [],
     [selectedWorkId]
-  );
+  ) as ProjectInformation[];
 
   const handleWorkCardClick = (id: WorkItem["id"]) => setSelectedWorkId(id);
 
@@ -41,21 +42,7 @@ export default function WorkProjects() {
           variants={staggerContainer}
           className="grid gap-6 grid-cols-[repeat(auto-fit,minmax(350px,1fr))] px-6"
         >
-          {projects.map((project) => (
-            <motion.div key={project.projectId} variants={fadeSlideUp}>
-              <ProjectCard
-                projectId={project.projectId}
-                title={project.title}
-                description={project.description}
-                tags={project.tags}
-                projectType={project.projectType as "Company" | "Personal"}
-                backgroundImgUrl={project.backgroundImgUrl}
-                githubUrl={project.githubUrl}
-                notionUrl={project.notionUrl}
-                onClick={() => console.log("hii")}
-              />
-            </motion.div>
-          ))}
+          <ProjectCardList projects={projects} />
         </motion.div>
       </section>
     </div>
