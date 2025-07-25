@@ -4,6 +4,18 @@ button {
   cursor: pointer;
 }
 
+body {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
 @font-face {
   font-family: "PyeojinGothic-Bold";
   src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2504-1@1.0/PyeojinGothic-Bold.woff2")
@@ -23,6 +35,15 @@ button {
 @theme {
   --font-display: "PyeojinGothic-Bold", "sans-serif";
   --font-header: "Paperlogy-8ExtraBold";
+  --color-beige: oklch(0.9769 0.011 63.36);
+  --color-wine-red: oklch(0.5253 0.155 17.61);
+  --color-orange: oklch(0.7883 0.1326 46.99);
+  --color-font-default: oklch(0.3012 0 0);
+  --color-orange: oklch(0.7682 0.1422 40.26);
+  --color-sky-blue: oklch(0.8548 0.095 224.65);
+  --color-light-purple: oklch(0.7723 0.1204 284.28);
+  --color-green: oklch(0.889 0.1786 167.29);
+  --color-pink: oklch(0.8333 0.1498 324.86);
 }
 
 @keyframes gradientFlow {
