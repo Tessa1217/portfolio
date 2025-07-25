@@ -23,7 +23,7 @@ export default function WorkProjects() {
   const handleWorkCardClick = (id: WorkItem["id"]) => setSelectedWorkId(id);
 
   return (
-    <div className="grid sm:grid-cols-1 md:grid-cols-12 md:gap-4">
+    <div className="grid sm:grid-cols-1 md:grid-cols-12 md:gap-4 justify-center align-center">
       {/* 회사 이력 리스트 사이드 바*/}
       <aside className="col-span-12 md:col-span-3 lg:col-span-2">
         <WorkCardList

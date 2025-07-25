@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { FiMenu, FiX } from "react-icons/fi";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -66,8 +67,7 @@ export default function Navbar() {
           onClick={() => setMobileOpen((o) => !o)}
           className="md:hidden text-white text-2xl"
         >
-          {/* {mobileOpen ? <FiX /> : <FiMenu />} */}
-          Mobile Menu
+          {mobileOpen ? <FiX /> : <FiMenu />}
         </button>
       </div>
 
