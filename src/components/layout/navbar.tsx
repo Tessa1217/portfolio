@@ -49,7 +49,7 @@ export default function Navbar() {
 
         {/* Call-to-Action 버튼 */}
         <div className="hidden md:block">
-          <motion.a
+          {/* <motion.a
             href="#contact"
             whileHover={{ scale: 1.05 }}
             className="
@@ -59,7 +59,7 @@ export default function Navbar() {
             "
           >
             Contact
-          </motion.a>
+          </motion.a> */}
         </div>
 
         {/* 모바일 햄버거 */}
@@ -86,7 +86,7 @@ export default function Navbar() {
               </a>
             </li>
           ))}
-          <li>
+          {/* <li>
             <a
               href="#contact"
               className="
@@ -97,7 +97,7 @@ export default function Navbar() {
             >
               Contact
             </a>
-          </li>
+          </li> */}
         </ul>
       </motion.div>
     </nav>
