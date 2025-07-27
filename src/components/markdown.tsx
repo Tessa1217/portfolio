@@ -1,13 +1,14 @@
 import ReactMarkdown from "react-markdown";
 import { useState, useEffect } from "react";
 import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
 
 const MarkdownContent = ({
-  mdFilePath,
+  pageId,
   className,
 }: {
-  mdFilePath: string;
-  className: string;
+  pageId: string;
+  className?: string;
 }) => {
   const [markdownContent, setMarkdownContent] = useState("");
 
@@ -16,19 +17,31 @@ const MarkdownContent = ({
       const response = await fetch("/api/notion-page", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ pageId: mdFilePath }),
+        body: JSON.stringify({ pageId }),
       });
       const { markdown } = await response.json();
-      setMarkdownContent(markdown);
+      const preprocessed = convertToggleToDetails(markdown);
+      setMarkdownContent(preprocessed);
     };
 
     markdownRender();
-  }, [mdFilePath]);
+  }, [pageId]);
+
+  function convertToggleToDetails(markdown: string): string {
+    const toggleHeadingRegex = /^### (.+?)\n+```([\s\S]*?)```/gm;
+    return markdown.replace(
+      toggleHeadingRegex,
+      (_, title, code) =>
+        `<details>\n<summary>${title}</summary>\n\n\`\`\`\n${code}\n\`\`\`\n</details>`
+    );
+  }
 
   return (
-    <div className="h-full text-left bg-white p-3 text-black font-display">
+    <div className={`h-full text-left bg-white p-3 text-black font-display`}>
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
+        rehypePlugins={[rehypeRaw]}
+        skipHtml={false}
         components={{
           h1: ({ node, ...props }) => (
             <h1 className="text-3xl font-bold mt-8 mb-4" {...props} />
@@ -42,7 +55,7 @@ const MarkdownContent = ({
           p: ({ node, ...props }) => (
             <>
               <p
-                className="mb-4 leading-relaxed text-gray-700 dark:text-gray-300 inline-block"
+                className="mb-4 leading-relaxed text-gray-700 dark:text-gray-300 inline"
                 {...props}
               />
               <br />
@@ -117,6 +130,15 @@ const MarkdownContent = ({
               alt={props.alt}
               {...props}
             />
+          ),
+          details: ({ node, ...props }) => (
+            <details
+              className="my-4 bg-gray-50 p-4 rounded border border-gray-200"
+              {...props}
+            />
+          ),
+          summary: ({ node, ...props }) => (
+            <summary className="cursor-pointer font-semibold mb-2" {...props} />
           ),
         }}
       >
