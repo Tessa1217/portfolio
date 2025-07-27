@@ -17,7 +17,7 @@ const PersonalProjects = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
           variants={staggerContainer}
-          className="grid gap-6 grid-cols-[repeat(auto-fit,minmax(350px,1fr))] px-6"
+          className="w-full max-w-screen-xl mx-auto grid gap-6 grid-cols-[repeat(auto-fit,minmax(300px,1fr))]"
         >
           <ProjectCardList projects={projects} />
         </motion.div>

@@ -2,7 +2,9 @@ import { motion } from "framer-motion";
 import { type ProjectInformation } from "@/types";
 import { FaGithub } from "react-icons/fa";
 import { RxNotionLogo } from "react-icons/rx";
-
+import { lazy, useState } from "react";
+import ProjectModal from "@/components/project-modal";
+const MarkdownContent = lazy(() => import("@/components/markdown"));
 const hoverEffect = {
   hover: { scale: 1.02, boxShadow: "0 8px 24px rgba(0,0,0,0.2)" },
 };
@@ -16,18 +18,20 @@ export default function ProjectCard({
   githubUrl,
   notionPageId,
 }: ProjectInformation) {
+  const [showNotionModal, setShowNotionModal] = useState(false);
+
   return (
     <motion.div
       variants={hoverEffect}
       whileHover="hover"
-      className="relative min-h-[400px] bg-gray-800 rounded-2xl overflow-hidden cursor-pointer transition-transform duration-200"
+      className="relative min-h-[400px] bg-gray-900 rounded-2xl overflow-hidden cursor-pointer transition-transform duration-200 sm:max-w-sm"
     >
       {/* Background Image Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-bottom opacity-20"
         style={{ backgroundImage: `url(${backgroundImgUrl})` }}
       />
-      <div className="relative p-6 flex flex-col h-full">
+      <div className="relative min-h-[400px] p-6 flex flex-col h-full justify-between">
         {/* Type Badge */}
         <span
           className={
@@ -39,10 +43,10 @@ export default function ProjectCard({
         </span>
 
         {/* Title & Description */}
-        <h3 className="mt-2 text-xl font-semibold text-white leading-snug">
+        <h3 className="mt-4 text-xl font-semibold text-white leading-snug">
           {title}
         </h3>
-        <p className="mt-2 flex-1 text-gray-300 text-sm leading-relaxed">
+        <p className="mt-4 flex-1 text-gray-300 text-sm font-semibold leading-relaxed">
           {description}
         </p>
 
@@ -51,7 +55,7 @@ export default function ProjectCard({
           {tags.map((tag) => (
             <span
               key={tag}
-              className="bg-gray-700 text-xs text-gray-200 px-2 py-1 rounded-full whitespace-nowrap"
+              className="bg-gray-900 text-xs text-gray-200 px-2 py-1 font-semibold rounded-full whitespace-nowrap"
             >
               {tag}
             </span>
@@ -67,18 +71,21 @@ export default function ProjectCard({
               rel="noopener noreferrer"
               className="text-gray-200 hover:text-white transition-colors"
             >
-              <FaGithub size={20} />
+              <FaGithub size={30} />
             </a>
           )}
           {notionPageId && (
-            <a
-              href={notionPageId}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
               className="text-gray-200 hover:text-white transition-colors"
+              onClick={() => setShowNotionModal(true)}
             >
-              <RxNotionLogo size={20} />
-            </a>
+              <RxNotionLogo size={30} />
+            </button>
+          )}
+          {notionPageId && showNotionModal && (
+            <ProjectModal onClose={() => setShowNotionModal(false)}>
+              <MarkdownContent pageId={notionPageId} />
+            </ProjectModal>
           )}
         </div>
       </div>

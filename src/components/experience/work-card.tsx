@@ -26,7 +26,7 @@ export default function WorkCard({
         max-w-[100px]
         flex items-center 
         space-x-3 px-4 py-2 
-        bg-gray-800 
+        bg-white
         rounded-md
         min-h-[80px] 
         transition-all duration-200
@@ -39,14 +39,13 @@ export default function WorkCard({
         }
       `}
       >
-        <div className="absolute top-0 left-0 w-full h-full z-0 opacity-30">
+        <div className="absolute top-0 left-0 w-full h-full z-0 opacity-100">
           <img
             src={logoUrl}
             alt={company}
             className="
             w-full h-full            
-            object-contain 
-            rounded-full 
+            object-contain             
             border-2 border-transparent 
             transition-colors
             group-hover:border-green-400
