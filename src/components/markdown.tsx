@@ -5,7 +5,6 @@ import rehypeRaw from "rehype-raw";
 
 const MarkdownContent = ({
   pageId,
-  className,
 }: {
   pageId: string;
   className?: string;
@@ -87,21 +86,28 @@ const MarkdownContent = ({
               {...props}
             />
           ),
-          code({ node, inline, className, children, ...props }) {
-            return inline ? (
-              <code
-                className="bg-gray-100 dark:bg-gray-700 rounded px-1 text-sm font-mono"
-                {...props}
-              >
-                {children}
-              </code>
-            ) : (
+          code({ node, className, children, ...props }) {
+            return (
               <pre className="bg-gray-100 text-red-400 rounded-sm px-0.5 overflow-auto inline text-center">
                 <code className={className} {...props}>
                   {children}
                 </code>
               </pre>
             );
+            // return inline ? (
+            //   <code
+            //     className="bg-gray-100 dark:bg-gray-700 rounded px-1 text-sm font-mono"
+            //     {...props}
+            //   >
+            //     {children}
+            //   </code>
+            // ) : (
+            //   <pre className="bg-gray-100 text-red-400 rounded-sm px-0.5 overflow-auto inline text-center">
+            //     <code className={className} {...props}>
+            //       {children}
+            //     </code>
+            //   </pre>
+            // );
           },
           table: ({ node, ...props }) => (
             <table
