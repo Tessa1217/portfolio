@@ -26,8 +26,9 @@ const AnimatedParticles = ({
 
   return (
     <div className="pointer-events-none fixed inset-0 overflow-hidden">
-      {particles.map((particle) => (
+      {particles.map((particle, idx) => (
         <motion.div
+          key={`particle_${idx}`}
           className={`absolute ${particle.style.classes}`}
           style={particle.style.styles}
           initial={{
