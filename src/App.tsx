@@ -16,7 +16,7 @@ function App() {
         </div>
         {/* <HeroBackground /> */}
         <AnimatedProgressScroll />
-        <div className="relative z-10">
+        <div className="relative z-10 flex flex-col space-y-10">
           <Introduction />
           <About />
           <Experience />
