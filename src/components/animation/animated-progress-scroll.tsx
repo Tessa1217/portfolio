@@ -1,6 +1,7 @@
 import { motion, useScroll } from "framer-motion";
 
 export default function AnimatedProgressScroll() {
+  // scroll event
   const { scrollYProgress } = useScroll();
   return (
     <div className="bg-background-light overflow-hidden rounded-full">

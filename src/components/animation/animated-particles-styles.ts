@@ -20,6 +20,7 @@ export function getAnimatedParticleStyles({
     pink: { class: "bg-pink", code: "oklch(0.8333 0.1498 324.86)" },
   };
 
+  // particle shape map
   const shapeMap = {
     circle: "opacity-20 rounded-full",
     square: "opacity-20 ",
