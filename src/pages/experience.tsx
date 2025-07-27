@@ -16,16 +16,16 @@ export default function Experience() {
       id="experience"
       variants={fadeInUp}
       as="section"
-      className="w-full py-20 text-white text-center px-4 mb-24 "
+      className="w-full py-20 text-white text-center px-4 min-h-screen"
     >
-      <div className="container h-full mx-auto px-6">
+      <div className="container w-full h-full mx-auto px-6">
         <SectionTitle title="Experience" />
         <div className="flex justify-center space-x-4 mb-12">
           {TABS.map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-4 py-2 font-medium rounded-full transition
+              className={`px-4 py-2 font-medium rounded-full transition font-semibold
                 ${
                   activeTab === tab
                     ? "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 font-extrabold"
