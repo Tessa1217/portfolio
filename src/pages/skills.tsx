@@ -13,7 +13,7 @@ export default function Skills() {
       id="skills"
       variants={fadeInUp}
       as="section"
-      className="h-full flex items-center justify-center text-white text-center px-4 w-screen p-10 relative"
+      className="min-h-[100svh] flex items-center justify-center text-white text-center px-4 w-screen p-10 relative"
     >
       <div className="container mx-auto">
         <SectionTitle title="Skill Set" />

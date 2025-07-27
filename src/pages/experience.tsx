@@ -16,7 +16,7 @@ export default function Experience() {
       id="experience"
       variants={fadeInUp}
       as="section"
-      className="w-full py-20 text-white text-center px-4 min-h-screen"
+      className="w-full py-20 text-white text-center px-4 min-h-[100svh]"
     >
       <div className="container w-full h-full mx-auto px-6">
         <SectionTitle title="Experience" />
