@@ -23,3 +23,9 @@ export interface ProjectInformation {
   githubUrl?: string;
   notionPageId?: string;
 }
+
+export interface SkillInformation {
+  id: number;
+  skillName: string;
+  skillIconUrl: string;
+}
