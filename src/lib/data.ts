@@ -116,7 +116,7 @@ export const PERSONAL_PROJECT_EXPERIENCE = [
     projectType: "Personal",
     backgroundImgUrl: "/illustration/project_3.png",
     githubUrl: "",
-    notionPageId: "239184f7752480f3817dc1b9fe2a4d29",
+    notionPageId: "23f184f7752480f1ad9fe60afd3ade16",
   },
 ];
 
