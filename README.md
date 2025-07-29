@@ -1,6 +1,8 @@
 # 🌐 Developer Portfolio
 
 ## 권유진의 포트폴리오 사이트입니다.
+🔗 링크: https://portfolio-six-indol-86.vercel.app/
+
 <img width="1866" height="916" alt="스크린샷 2025-07-30 035028" src="https://github.com/user-attachments/assets/c826d1f7-b040-4e2c-b428-2ebf733c26ba" />
 
 ## ✨ Features
