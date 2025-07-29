@@ -28,9 +28,6 @@ export default async function handler(req, res) {
 
   try {
     const mdBlocks = await n2m.pageToMarkdown(pageId);
-    console.log(mdBlocks);
-    // const mdStringObject = n2m.toMarkdownString(mdBlocks);
-    // console.log(mdStringObject.parent);
     const converted = convertHeadingToggleToDetails(mdBlocks);
 
     res.status(200).json({ markdown: converted });
@@ -51,7 +48,7 @@ function convertBlockToMarkdown(block) {
     case "paragraph":
       return `${text}\n\n`;
     case "code":
-      return `\`\`\`${block.language || ""}\n${text}\n\`\`\`\n\n`;
+      return `${block.language || ""}\n${text}\n\n`;
     case "heading_3":
       return `${text}\n\n`;
     default:
