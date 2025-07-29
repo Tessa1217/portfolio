@@ -1,17 +1,21 @@
 import type { ProjectInformation } from "@/types";
-import { motion } from "framer-motion";
-import { fadeSlideUp } from "@/constants/animation/animation";
 import ProjectCard from "@/components/experience/project-card";
+import { AnimatedList, AnimatedElement } from "@/components/animation";
 
 interface ProjectCardListProps {
   projects: ProjectInformation[];
+  className?: string;
 }
 
-const ProjectCardList = ({ projects }: ProjectCardListProps) => {
+const ProjectCardList = ({ projects, className }: ProjectCardListProps) => {
   return (
-    <>
+    <AnimatedList staggerSpeed="normal" viewport="once" className={className}>
       {projects.map((project) => (
-        <motion.div key={project.id} variants={fadeSlideUp}>
+        <AnimatedElement
+          key={project.id}
+          listChildren={true}
+          animation="fadeInUp"
+        >
           <ProjectCard
             id={project.id}
             title={project.title}
@@ -23,9 +27,9 @@ const ProjectCardList = ({ projects }: ProjectCardListProps) => {
             githubUrl={project.githubUrl}
             notionPageId={project.notionPageId}
           />
-        </motion.div>
+        </AnimatedElement>
       ))}
-    </>
+    </AnimatedList>
   );
 };
 

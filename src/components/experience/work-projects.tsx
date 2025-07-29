@@ -1,7 +1,4 @@
 import { useState, useMemo } from "react";
-import { motion } from "framer-motion";
-import { useInViewAnimation } from "@/hooks/useInViewAnimation";
-import { staggerContainer } from "@/constants/animation/animation";
 import WorkCardList from "@/components/experience/work-card-list";
 import ProjectCardList from "@/components/experience/project-card-list";
 import { WORK_EXPERIENCE } from "@/lib/data";
@@ -10,7 +7,6 @@ import type { ProjectInformation } from "@/types";
 type WorkItem = (typeof WORK_EXPERIENCE)[number];
 
 export default function WorkProjects() {
-  const { ref, controls } = useInViewAnimation();
   const [selectedWorkId, setSelectedWorkId] = useState<WorkItem["id"]>(
     WORK_EXPERIENCE[0].id
   );
@@ -32,18 +28,12 @@ export default function WorkProjects() {
           handleWorkCardClick={handleWorkCardClick}
         />
       </aside>
+      {/* 회사 진행 프로젝트 */}
       <section className="col-span-12 md:col-span-9 lg:col-span-10">
-        <motion.div
-          ref={ref}
-          animate={controls}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          variants={staggerContainer}
+        <ProjectCardList
+          projects={projects}
           className="w-full max-w-screen-xl mx-auto grid gap-6 grid-cols-[repeat(auto-fit,minmax(300px,1fr))]"
-        >
-          <ProjectCardList projects={projects} />
-        </motion.div>
+        />
       </section>
     </div>
   );

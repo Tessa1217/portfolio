@@ -1,13 +1,10 @@
-import { motion } from "framer-motion";
 import { type ProjectInformation } from "@/types";
 import { FaGithub } from "react-icons/fa";
 import { RxNotionLogo } from "react-icons/rx";
 import { lazy, useState } from "react";
 import ProjectModal from "@/components/project-modal";
+import { AnimatedCard } from "@/components/animation";
 const MarkdownContent = lazy(() => import("@/components/markdown"));
-const hoverEffect = {
-  hover: { scale: 1.02, boxShadow: "0 8px 24px rgba(0,0,0,0.2)" },
-};
 
 export default function ProjectCard({
   title,
@@ -21,10 +18,9 @@ export default function ProjectCard({
   const [showNotionModal, setShowNotionModal] = useState(false);
 
   return (
-    <motion.div
-      variants={hoverEffect}
-      whileHover="hover"
-      className="relative min-h-[400px] bg-gray-900 rounded-2xl overflow-hidden cursor-pointer transition-transform duration-200 sm:max-w-sm"
+    <AnimatedCard
+      hoverEffect="glow"
+      className="relative min-h-[400px] bg-gray-900 rounded-2xl overflow-hidden transition-transform duration-200 sm:max-w-sm pointer-none"
     >
       {/* Background Image Overlay */}
       <div
@@ -89,6 +85,6 @@ export default function ProjectCard({
           )}
         </div>
       </div>
-    </motion.div>
+    </AnimatedCard>
   );
 }
