@@ -1,16 +1,14 @@
-import { fadeInUp } from "@/constants/animation/animation";
 import { HERO_IDENTIFICATION, HERO_TEXT } from "@/lib/data";
-import AnimatedSection from "@/components/animation/animated-section";
+import { AnimatedSection } from "@/components/animation";
 import HeroIllustration from "@/components/hero-illustration";
 import AnimatedText from "@/components/animation/animated-text";
-import { motion, AnimatePresence } from "framer-motion";
 
 export default function Introduction() {
   return (
     <AnimatedSection
       id="home"
+      preset="hero"
       as="section"
-      variants={fadeInUp}
       className="min-h-[100svh] flex flex-row items-center justify-center text-white"
     >
       <div className="container mx-auto xl:px-40 lg:px-20 md:px-15 px-12 flex flex-col-reverse md:flex-row items-center justify-between gap-12">
@@ -44,19 +42,9 @@ export default function Introduction() {
           </div>
         </div>
         {/* 일러스트 영역 */}
-        <AnimatePresence>
-          <div className="w-full md:w-1/2 flex justify-center md:justify-end mb-12 md:mb-0">
-            <motion.div
-              initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.8 }}
-              viewport={{ once: false, amount: 0.3 }}
-              className="flex-shrink-0 justify-center items-center w-48 h-48 md:w-60 md:h-60 lg:w-90 lg:h-90"
-            >
-              <HeroIllustration />
-            </motion.div>
-          </div>
-        </AnimatePresence>
+        <div className="w-[70%] md:w-1/2 lg:w-1/3 flex justify-center md:justify-end mb-12 md:mb-0">
+          <HeroIllustration />
+        </div>
       </div>
     </AnimatedSection>
   );
