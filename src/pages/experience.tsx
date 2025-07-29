@@ -25,7 +25,7 @@ export default function Experience() {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-4 py-2 font-medium rounded-full transition font-semibold
+              className={`px-4 py-2 rounded-full transition font-semibold
                 ${
                   activeTab === tab
                     ? "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 font-extrabold"
