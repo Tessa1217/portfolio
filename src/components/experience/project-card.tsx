@@ -66,6 +66,7 @@ export default function ProjectCard({
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-200 hover:text-white transition-colors"
+              aria-label="GitHub 페이지 열기"
             >
               <FaGithub size={30} />
             </a>
@@ -73,6 +74,7 @@ export default function ProjectCard({
           {notionPageId && (
             <button
               className="text-gray-200 hover:text-white transition-colors"
+              aria-label="Notion 페이지 열기"
               onClick={() => setShowNotionModal(true)}
             >
               <RxNotionLogo size={30} />
