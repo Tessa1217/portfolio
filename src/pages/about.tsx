@@ -11,7 +11,7 @@ export default function About() {
         id="about"
         variants={fadeInUp}
         as="section"
-        className="min-h-[100svh] flex items-center justify-center text-white text-center px-4 w-screen p-10"
+        className="min-h-[100svh] flex items-center justify-center text-white text-center px-4 w-full p-10"
       >
         <div className="flex flex-col">
           <SectionTitle title="About Me" />
