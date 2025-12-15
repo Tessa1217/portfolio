@@ -40,6 +40,29 @@ export const WORK_EXPERIENCE = [
     projects: [
       {
         id: 1,
+        title: "대구광역시 클라우드 네이티브 전환 사업",
+        period: "2025-09-현재",
+        description:
+          "Vue.js 3 기반 프론트엔드와 MSA 기반의 클라우드 네이티브 전환 사업",
+        tags: [
+          "Vue.js",
+          "Pinia",
+          "Vite",
+          "Monorepo",
+          "Turborepo",
+          "Java",
+          "Spring Boot",
+          "Spring Security",
+          "CUBRID",
+          "Mybatis",
+        ],
+        projectType: "Company",
+        backgroundImgUrl: "/illustration/project_4.png",
+        githubUrl: "",
+        notionPageId: "",
+      },
+      {
+        id: 2,
         title: "국립대구과학관 홈페이지 개편",
         period: "2025.02-2025.05",
         description:
@@ -59,7 +82,7 @@ export const WORK_EXPERIENCE = [
         notionPageId: "239184f775248089bfe1e54251392601",
       },
       {
-        id: 2,
+        id: 3,
         title: "에듀넷 티-클리어 클라우드 전환 및 서비스 재구조화",
         period: "2024.08-2025.02",
         description:
@@ -81,7 +104,7 @@ export const WORK_EXPERIENCE = [
         notionPageId: "239184f77524806bba34ebde22ca0fda",
       },
       {
-        id: 3,
+        id: 4,
         title: "사내 관리자 프레임워크 개발",
         period: "2024.01-2024.07",
         description:
@@ -108,6 +131,26 @@ export const WORK_EXPERIENCE = [
 export const PERSONAL_PROJECT_EXPERIENCE = [
   {
     id: 1,
+    title: "Low-Code UI Generator",
+    period: "2025.11-2025.12",
+    description:
+      "디자인 시스템 기반의 시각적 페이지 빌더로 드래그 앤 드롭을 통해 React 컴포넌트를 구성하고 즉시 프로덕션 레디 코드를 생성하는 프로젝트",
+    tags: [
+      "React.js",
+      "Vanilla Extract",
+      "Style Dictionary",
+      "@dnd-kit",
+      "@xyflow/react",
+      "@monaco-editor",
+      "Vite",
+    ],
+    projectType: "Personal",
+    backgroundImgUrl: "/illustration/project_5.png",
+    githubUrl: "https://github.com/Tessa1217/lowcode-generator",
+    notionPageId: "",
+  },
+  {
+    id: 2,
     title: "YK Portfolio",
     period: "2025.06-2025.07",
     description:
@@ -129,8 +172,8 @@ export const SKILL_SET: Record<string, SkillInformation[]> = {
     },
     {
       id: 2,
-      skillName: "Vue.js",
-      skillIconUrl: "/logo/Vue.js.png",
+      skillName: "TypeScript",
+      skillIconUrl: "/logo/TypeScript.png",
     },
     {
       id: 3,
@@ -139,13 +182,18 @@ export const SKILL_SET: Record<string, SkillInformation[]> = {
     },
     {
       id: 4,
+      skillName: "Vue.js",
+      skillIconUrl: "/logo/Vue.js.png",
+    },
+    {
+      id: 5,
       skillName: "Tailwind CSS",
       skillIconUrl: "/logo/Tailwind CSS.png",
     },
     {
-      id: 5,
-      skillName: "TypeScript",
-      skillIconUrl: "/logo/TypeScript.png",
+      id: 6,
+      skillName: "Vanilla Extract",
+      skillIconUrl: "/logo/Vanilla-Extract.png",
     },
   ],
   backend: [
