@@ -20,34 +20,40 @@ export default function ProjectCard({
   return (
     <AnimatedCard
       hoverEffect="glow"
-      className="relative min-h-[400px] bg-gray-900 rounded-2xl overflow-hidden transition-transform duration-200 sm:max-w-sm pointer-none"
+      className="relative h-full bg-gray-900 rounded-2xl overflow-hidden transition-transform duration-200"
     >
       {/* Background Image Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-bottom opacity-20"
         style={{ backgroundImage: `url(${backgroundImgUrl})` }}
       />
-      <div className="relative min-h-[400px] p-6 flex flex-col h-full justify-between">
-        {/* Type Badge */}
-        <span
-          className={
-            `self-start px-3 py-1 rounded-full text-xs font-medium text-white ` +
-            (projectType === "Company" ? "bg-indigo-600" : "bg-green-600")
-          }
-        >
-          {projectType}
-        </span>
 
-        {/* Title & Description */}
-        <h3 className="mt-4 text-xl font-semibold text-white leading-snug">
+      {/* Content Container - Flexbox로 내부 레이아웃 제어 */}
+      <div className="relative h-full p-6 flex flex-col">
+        {/* Type Badge - 고정 영역 */}
+        <div className="flex-shrink-0">
+          <span
+            className={
+              `inline-block px-3 py-1 rounded-full text-xs font-medium text-white ` +
+              (projectType === "Company" ? "bg-indigo-600" : "bg-green-600")
+            }
+          >
+            {projectType}
+          </span>
+        </div>
+
+        {/* Title - 고정 영역 */}
+        <h3 className="mt-4 flex-shrink-0 text-xl font-semibold text-white leading-snug">
           {title}
         </h3>
-        <p className="mt-4 flex-1 text-gray-300 text-sm font-semibold leading-relaxed">
+
+        {/* Description - 가변 영역 (남은 공간 차지) */}
+        <p className="mt-4 flex-1 text-gray-300 text-sm font-semibold leading-relaxed line-clamp-4 sm:line-clamp-6">
           {description}
         </p>
 
-        {/* Tags */}
-        <div className="mt-4 flex flex-wrap gap-2">
+        {/* Tags - 고정 영역 */}
+        <div className="mt-4 flex-shrink-0 flex flex-wrap gap-2">
           {tags.map((tag) => (
             <span
               key={tag}
@@ -58,8 +64,8 @@ export default function ProjectCard({
           ))}
         </div>
 
-        {/* Actions */}
-        <div className="mt-4 flex items-center space-x-4">
+        {/* Actions - 고정 영역 */}
+        <div className="mt-4 flex-shrink-0 flex items-center space-x-4">
           {githubUrl && (
             <a
               href={githubUrl}
@@ -80,13 +86,15 @@ export default function ProjectCard({
               <RxNotionLogo size={30} />
             </button>
           )}
-          {notionPageId && showNotionModal && (
-            <ProjectModal onClose={() => setShowNotionModal(false)}>
-              <MarkdownContent pageId={notionPageId} />
-            </ProjectModal>
-          )}
         </div>
       </div>
+
+      {/* Modal */}
+      {notionPageId && showNotionModal && (
+        <ProjectModal onClose={() => setShowNotionModal(false)}>
+          <MarkdownContent pageId={notionPageId} />
+        </ProjectModal>
+      )}
     </AnimatedCard>
   );
 }
