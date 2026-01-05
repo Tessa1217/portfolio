@@ -34,7 +34,6 @@ const AnimatedSection = ({
   const MotionComponent = motion[as];
   const { ref, controls } = useInViewAnimation(viewport);
 
-  // Use preset if provided, otherwise use custom variants
   const animationVariants = preset
     ? animationPresets[preset].variants
     : variants;
@@ -50,7 +49,7 @@ const AnimatedSection = ({
       animate={controls}
       variants={animationVariants}
       transition={transition}
-      className={className}
+      className={"scroll-mt-8 " + className}
       style={{ transitionDelay: `${delay}s` }}
     >
       {children}
