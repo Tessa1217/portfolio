@@ -22,6 +22,7 @@ body {
     format("woff2");
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -30,6 +31,7 @@ body {
     format("woff2");
   font-weight: 800;
   font-style: normal;
+  font-display: swap;
 }
 
 @theme {
@@ -44,35 +46,4 @@ body {
   --color-light-purple: oklch(0.7723 0.1204 284.28);
   --color-green: oklch(0.889 0.1786 167.29);
   --color-pink: oklch(0.8333 0.1498 324.86);
-}
-
-@keyframes gradientFlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-.bg-animated-gradient {
-  background: #000000; /* fallback for old browsers */
-  background: linear-gradient(
-    to bottom right,
-    #0d1b2a 0%,
-    #1b263b 30%,
-    #415a77 70%,
-    #778da9 100%
-  );
-  background: -webkit-linear-gradient(
-    to bottom right,
-    #0d1b2a 0%,
-    #1b263b 30%,
-    #415a77 70%,
-    #778da9 100%
-  );
-  background-size: 400% 400%;
-  animation: gradientFlow 20s ease infinite;
 }
