@@ -12,6 +12,12 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const onNavClick = (href: string) => {
+    const hash = href.slice(1);
+    const element = document.getElementById(hash);
+    if (element) element.scrollIntoView({ behavior: "smooth" });
+  };
+
   const menu = [
     { label: "Home", href: "#home" },
     { label: "About", href: "#about" },
@@ -42,7 +48,9 @@ export default function Navbar() {
               whileHover={{ y: -2 }}
               className="text-lg font-medium hover:text-accent transition-colors"
             >
-              <a href={item.href}>{item.label}</a>
+              <button onClick={() => onNavClick(item.href)}>
+                {item.label}
+              </button>
             </motion.li>
           ))}
         </ul>
