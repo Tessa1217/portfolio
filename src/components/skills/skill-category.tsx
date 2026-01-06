@@ -15,7 +15,7 @@ export default function SkillCategory({
     <AnimatedElement listChildren={true} animation="fadeInUp">
       <AnimatedCard
         hoverEffect="scale"
-        className="bg-gray-800 rounded-2xl p-6 flex flex-col h-full"
+        className="h-full bg-white/10 backdrop-blur-sm p-10 rounded-lg shadow-xl max-w-md w-full text-center"
       >
         <h3 className="text-2xl uppercase font-header mb-8 text-white">
           {categoryName}

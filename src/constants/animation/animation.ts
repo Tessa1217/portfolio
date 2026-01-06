@@ -1,6 +1,5 @@
 import type { Variants } from "framer-motion";
 
-// Base transition presets
 export const transitions = {
   smooth: { duration: 0.6, ease: "easeOut" },
   fast: { duration: 0.3, ease: "easeOut" },
@@ -8,7 +7,6 @@ export const transitions = {
   bounce: { duration: 0.6, ease: "easeOut", type: "spring", stiffness: 100 },
 } as const;
 
-// Common animation variants
 export const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
@@ -72,7 +70,6 @@ export const slideInFromBottom: Variants = {
   },
 };
 
-// Stagger animations
 export const staggerContainer: Variants = {
   hidden: {},
   visible: {
@@ -103,7 +100,6 @@ export const staggerSlow: Variants = {
   },
 };
 
-// Text animations
 export const textContainerVariants: Variants = {
   hidden: {},
   visible: {
@@ -138,7 +134,6 @@ export const cursorVariants: Variants = {
   },
 };
 
-// Hover animations
 export const hoverScale: Variants = {
   initial: { scale: 1 },
   hover: {
@@ -164,7 +159,6 @@ export const hoverGlow: Variants = {
   },
 };
 
-// Particle animations
 export const particleVariants: Variants = {
   initial: {
     x: 0,
@@ -185,7 +179,6 @@ export const particleVariants: Variants = {
   },
 };
 
-// Animation presets for common use cases
 export const animationPresets = {
   card: {
     variants: fadeSlideUp,
