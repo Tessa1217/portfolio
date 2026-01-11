@@ -13,7 +13,7 @@ export default function Introduction() {
     >
       <div className="container mx-auto xl:px-40 lg:px-20 md:px-15 px-12 flex flex-col-reverse md:flex-row items-center justify-between gap-12">
         <div className="w-full md:w-1/2 text-center md:text-left space-y-6">
-          <p className="text-lg font-display font-bold text-[#3CE3BD]">
+          <p className="text-lg font-display font-bold text-primary">
             안녕하세요, 저는
           </p>
           <div className="space-y-5">
@@ -21,7 +21,8 @@ export default function Introduction() {
               texts={HERO_IDENTIFICATION}
               className="font-display font-extrabold
                 text-4xl lg:text-6xl
-                text-white
+                text-light-text
+                dark:text-dark-text
                 whitespace-nowrap"
             />
             <AnimatedText
@@ -29,14 +30,16 @@ export default function Introduction() {
               className="
                 font-display font-semibold
                 text-2xl lg:text-3xl
-                text-white/80
+                text-light-text/80
+                dark:text-dark-text/80
                 whitespace-nowrap
               "
             />
-            <p className="font-display font-medium text-2xl lg:text-3xl text-white ms-5">
-              <span className="font-bold text-[#3CE3BD]">
-                Frontend Developer
-              </span>
+            <p
+              className="font-display font-medium text-2xl lg:text-3xl text-light-text
+                dark:text-dark-text ms-5"
+            >
+              <span className="font-bold text-primary">Frontend Developer</span>
               입니다.
             </p>
           </div>
