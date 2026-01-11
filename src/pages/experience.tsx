@@ -28,8 +28,8 @@ export default function Experience() {
               className={`px-4 py-2 rounded-full transition font-semibold
                 ${
                   activeTab === tab
-                    ? "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 font-extrabold"
-                    : "bg-accent text-white"
+                    ? "bg-white dark:bg-gray-800 text-gray-600 dark:text-dark-text font-extrabold"
+                    : "bg-accent bg-light-background dark:bg-dark-background"
                 }
                 hover:opacity-90
                 `}

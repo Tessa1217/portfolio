@@ -30,18 +30,21 @@ export default function Navbar() {
       className={`fixed z-50 transition-colors duration-300 backdrop-blur-lg top-0 left-0 right-0 w-full
       ${
         scrolled
-          ? "md:top-2 md:w-3/4 md:mx-auto md:rounded-3xl md:bg-white/30 md:dark:bg-[#0D1B2A]/70 md:shadow-md"
+          ? "md:top-2 md:w-3/4 md:mx-auto md:rounded-3xl md:bg-light-background/30 md:dark:bg-dark-background/70 md:shadow-md"
           : "md:top-0 md:w-full md:bg-transparent"
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
-        <a href="#home" className="text-2xl font-bold text-white">
+        <a
+          href="#home"
+          className="text-2xl font-bold text-light-text dark:text-dark-text"
+        >
           YK
         </a>
 
         {/* Desktop 메뉴 */}
-        <ul className="hidden md:flex space-x-8 text-white">
+        <ul className="hidden md:flex space-x-8 text-light-text dark:text-dark-text">
           {menu.map((item) => (
             <motion.li
               key={item.href}
@@ -73,7 +76,7 @@ export default function Navbar() {
         {/* 모바일 햄버거 */}
         <button
           onClick={() => setMobileOpen((o) => !o)}
-          className="md:hidden text-white text-2xl"
+          className="md:hidden text-light-text dark:text-dark-text text-2xl"
         >
           {mobileOpen ? <FiX /> : <FiMenu />}
         </button>

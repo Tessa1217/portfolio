@@ -20,7 +20,7 @@ export default function ProjectCard({
   return (
     <AnimatedCard
       hoverEffect="glow"
-      className="relative h-full bg-gray-900 rounded-2xl overflow-hidden transition-transform duration-200"
+      className="relative h-full bg-light-card dark:bg-dark-card rounded-2xl overflow-hidden transition-transform duration-200 cursor-pointer"
     >
       {/* Background Image Overlay */}
       <div
@@ -43,12 +43,12 @@ export default function ProjectCard({
         </div>
 
         {/* Title - 고정 영역 */}
-        <h3 className="mt-4 flex-shrink-0 text-xl font-semibold text-white leading-snug">
+        <h3 className="mt-4 flex-shrink-0 text-xl font-semibold text-light-text dark:text-dark-text leading-snug">
           {title}
         </h3>
 
         {/* Description - 가변 영역 (남은 공간 차지) */}
-        <p className="mt-4 flex-1 text-gray-300 text-sm font-semibold leading-relaxed line-clamp-4 sm:line-clamp-6">
+        <p className="mt-4 flex-1 text-light-text-secondary dark:text-dark-text-secondary text-sm font-semibold leading-relaxed line-clamp-4 sm:line-clamp-6">
           {description}
         </p>
 
@@ -57,7 +57,7 @@ export default function ProjectCard({
           {tags.map((tag) => (
             <span
               key={tag}
-              className="bg-gray-900 text-xs text-gray-200 px-2 py-1 font-semibold rounded-full whitespace-nowrap"
+              className="bg-light-primary dark:bg-dark-primary text-xs text-light-text dark:text-dark-text px-2 py-1 font-semibold rounded-full whitespace-nowrap"
             >
               {tag}
             </span>
@@ -71,7 +71,7 @@ export default function ProjectCard({
               href={githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-200 hover:text-white transition-colors"
+              className="text-light-text dark:text-dark-text hover:text-white transition-colors"
               aria-label="GitHub 페이지 열기"
             >
               <FaGithub size={30} />
@@ -79,7 +79,7 @@ export default function ProjectCard({
           )}
           {notionPageId && (
             <button
-              className="text-gray-200 hover:text-white transition-colors"
+              className="text-light-text dark:text-dark-text hover:text-white transition-colors"
               aria-label="Notion 페이지 열기"
               onClick={() => setShowNotionModal(true)}
             >

@@ -82,7 +82,7 @@ const ICON_SIZE = 48;
 const AnimatedCover = () => {
   return (
     <motion.div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-[#15182e]"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-light-background dark:bg-dark-background"
       variants={coverVariants}
       initial="initial"
       animate="animate"

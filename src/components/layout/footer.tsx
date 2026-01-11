@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiNotion } from "react-icons/si";
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#0f0f0f] text-gray-400 py-10 px-6">
+    <footer className="w-full bg-light-background-reverse text-light-text-secondary py-10 px-6">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
         {/* Left: 소셜 링크 */}
         <div className="flex items-center gap-4">

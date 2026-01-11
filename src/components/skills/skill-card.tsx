@@ -11,7 +11,7 @@ export default function SkillCard({
         alt={skillName}
         className="w-10 h-10 md:w-12 md:h-12"
       />
-      <span className="text-lg md:text-xl capitalize font-semibold text-white">
+      <span className="text-lg md:text-xl capitalize font-semibold text-light-text-secondary dark:text-dark-text-secondary">
         {skillName}
       </span>
     </div>
