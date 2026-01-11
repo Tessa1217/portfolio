@@ -1,6 +1,38 @@
+"use client";
+import Link from "next/link";
+import ThemeToggle from "@/components/ui/theme-toggle";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
+
+interface MenuType {
+  label: string;
+  href: string;
+}
+
+const menu = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
+  { label: "Skills", href: "#skills" },
+] as MenuType[];
+
+export function NavItem({ label, href }: MenuType) {
+  const onNavClick = (href: string) => {
+    const hash = href.slice(1);
+    const element = document.getElementById(hash);
+    if (element) element.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <motion.li
+      whileHover={{ y: -2 }}
+      className="text-lg font-semibold text-light-text dark:text-dark-text transition-colors"
+    >
+      <button onClick={() => onNavClick(href)}>{label}</button>
+    </motion.li>
+  );
+}
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -11,19 +43,6 @@ export default function Navbar() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  const onNavClick = (href: string) => {
-    const hash = href.slice(1);
-    const element = document.getElementById(hash);
-    if (element) element.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const menu = [
-    { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
-    { label: "Experience", href: "#experience" },
-    { label: "Skills", href: "#skills" },
-  ];
 
   return (
     <nav
@@ -36,28 +55,19 @@ export default function Navbar() {
     >
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
-        <a
+        <Link
           href="#home"
           className="text-2xl font-bold text-light-text dark:text-dark-text"
         >
           YK
-        </a>
-
+        </Link>
         {/* Desktop 메뉴 */}
         <ul className="hidden md:flex space-x-8 text-light-text dark:text-dark-text">
           {menu.map((item) => (
-            <motion.li
-              key={item.href}
-              whileHover={{ y: -2 }}
-              className="text-lg font-medium hover:text-accent transition-colors"
-            >
-              <button onClick={() => onNavClick(item.href)}>
-                {item.label}
-              </button>
-            </motion.li>
+            <NavItem key={item.label} {...item} />
           ))}
         </ul>
-
+        <ThemeToggle />
         {/* Call-to-Action 버튼 */}
         <div className="hidden md:block">
           {/* <motion.a

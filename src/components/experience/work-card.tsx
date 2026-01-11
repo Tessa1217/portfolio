@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { motion } from "framer-motion";
 import type { WorkInformation } from "@/types";
 
@@ -40,9 +41,10 @@ export default function WorkCard({
       `}
       >
         <div className="absolute top-0 left-0 w-full h-full z-0 opacity-100">
-          <img
+          <Image
             src={logoUrl}
             alt={company}
+            fill
             className="
             w-full h-full            
             object-contain             

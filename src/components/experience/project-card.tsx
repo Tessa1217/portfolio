@@ -1,12 +1,11 @@
 import { type ProjectInformation } from "@/types";
 import { FaGithub } from "react-icons/fa";
 import { RxNotionLogo } from "react-icons/rx";
-import { lazy, useState } from "react";
-import ProjectModal from "@/components/project-modal";
-import { AnimatedCard } from "@/components/animation";
-const MarkdownContent = lazy(() => import("@/components/markdown"));
+import { Animated } from "@/components/animation";
+import ProjectLink from "@/components/experience/project-link";
 
 export default function ProjectCard({
+  id,
   title,
   description,
   tags,
@@ -15,10 +14,8 @@ export default function ProjectCard({
   githubUrl,
   notionPageId,
 }: ProjectInformation) {
-  const [showNotionModal, setShowNotionModal] = useState(false);
-
   return (
-    <AnimatedCard
+    <Animated.Card
       hoverEffect="glow"
       className="relative h-full bg-light-card dark:bg-dark-card rounded-2xl overflow-hidden transition-transform duration-200 cursor-pointer"
     >
@@ -31,11 +28,11 @@ export default function ProjectCard({
       {/* Content Container - Flexbox로 내부 레이아웃 제어 */}
       <div className="relative h-full p-6 flex flex-col">
         {/* Type Badge - 고정 영역 */}
-        <div className="flex-shrink-0">
+        <div className="shrink-0">
           <span
             className={
-              `inline-block px-3 py-1 rounded-full text-xs font-medium text-white ` +
-              (projectType === "Company" ? "bg-indigo-600" : "bg-green-600")
+              `inline-block px-3 py-1 rounded-full text-xs font-semibold text-white ` +
+              (projectType === "Company" ? "bg-secondary" : "bg-primary")
             }
           >
             {projectType}
@@ -43,7 +40,7 @@ export default function ProjectCard({
         </div>
 
         {/* Title - 고정 영역 */}
-        <h3 className="mt-4 flex-shrink-0 text-xl font-semibold text-light-text dark:text-dark-text leading-snug">
+        <h3 className="mt-4 shrink-0 text-xl font-semibold text-light-text dark:text-dark-text leading-snug">
           {title}
         </h3>
 
@@ -53,11 +50,11 @@ export default function ProjectCard({
         </p>
 
         {/* Tags - 고정 영역 */}
-        <div className="mt-4 flex-shrink-0 flex flex-wrap gap-2">
+        <div className="mt-4 shrink-0 flex flex-wrap gap-2">
           {tags.map((tag) => (
             <span
               key={tag}
-              className="bg-light-primary dark:bg-dark-primary text-xs text-light-text dark:text-dark-text px-2 py-1 font-semibold rounded-full whitespace-nowrap"
+              className="bg-light-background-secondary dark:bg-dark-background-secondary text-xs text-light-text dark:text-dark-text px-2 py-1 font-semibold rounded-full whitespace-nowrap"
             >
               {tag}
             </span>
@@ -65,36 +62,28 @@ export default function ProjectCard({
         </div>
 
         {/* Actions - 고정 영역 */}
-        <div className="mt-4 flex-shrink-0 flex items-center space-x-4">
+        <div className="mt-4 shrink-0 flex items-center space-x-4">
           {githubUrl && (
-            <a
+            <ProjectLink
               href={githubUrl}
+              linkType="Github"
               target="_blank"
               rel="noopener noreferrer"
               className="text-light-text dark:text-dark-text hover:text-white transition-colors"
               aria-label="GitHub 페이지 열기"
-            >
-              <FaGithub size={30} />
-            </a>
+              icon={<FaGithub size={30} />}
+            />
           )}
           {notionPageId && (
-            <button
+            <ProjectLink
+              href={`/project/${id}`}
+              linkType="Notion"
               className="text-light-text dark:text-dark-text hover:text-white transition-colors"
-              aria-label="Notion 페이지 열기"
-              onClick={() => setShowNotionModal(true)}
-            >
-              <RxNotionLogo size={30} />
-            </button>
+              icon={<RxNotionLogo size={30} />}
+            />
           )}
         </div>
       </div>
-
-      {/* Modal */}
-      {notionPageId && showNotionModal && (
-        <ProjectModal onClose={() => setShowNotionModal(false)}>
-          <MarkdownContent pageId={notionPageId} />
-        </ProjectModal>
-      )}
-    </AnimatedCard>
+    </Animated.Card>
   );
 }

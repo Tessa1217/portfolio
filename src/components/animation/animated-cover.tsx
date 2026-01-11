@@ -1,6 +1,13 @@
+"use client";
 import type { Variants } from "framer-motion";
 import { motion } from "framer-motion";
-import HeroIllustration from "@/components/hero-illustration";
+import Image from "next/image";
+import HeroIllustration from "@/components/ui/hero-illustration";
+import {
+  ICON_POSITIONS,
+  ORBIT_RADIUS,
+  ICON_SIZE,
+} from "@/constants/animation/icon-positions";
 
 const coverVariants: Variants = {
   initial: { opacity: 1 },
@@ -41,11 +48,9 @@ const orbitAnimation = {
 };
 
 const orbitTransition = {
-  transition: {
-    repeat: Infinity,
-    duration: 20,
-    ease: "linear",
-  },
+  repeat: Infinity,
+  duration: 20,
+  ease: "linear" as const,
 };
 
 const skillIconVariants: Variants = {
@@ -67,18 +72,6 @@ const skillIconVariants: Variants = {
   }),
 };
 
-const SKILL_LOGOS = [
-  "React.png",
-  "TypeScript.png",
-  "JavaScript.png",
-  "Vite.js.png",
-  "Tailwind CSS.png",
-  "Git.png",
-];
-
-const ORBIT_RADIUS = 160;
-const ICON_SIZE = 48;
-
 const AnimatedCover = () => {
   return (
     <motion.div
@@ -99,58 +92,51 @@ const AnimatedCover = () => {
         animate="animate"
         exit="exit"
       >
-        {/* Central Illustration */}
         <div className="w-64 h-64">
           <HeroIllustration />
         </div>
 
-        {/* Orbiting Icons */}
         <motion.div
           className="absolute w-full h-full"
           animate={orbitAnimation}
           transition={orbitTransition}
         >
-          {SKILL_LOGOS.map((logo, i) => {
-            const angle = (i / SKILL_LOGOS.length) * (2 * Math.PI);
-            const x =
-              ORBIT_RADIUS -
-              ICON_SIZE / 2 +
-              (ORBIT_RADIUS - ICON_SIZE / 2) * Math.cos(angle);
-            const y =
-              ORBIT_RADIUS -
-              ICON_SIZE / 2 +
-              (ORBIT_RADIUS - ICON_SIZE / 2) * Math.sin(angle);
-
-            return (
+          {ICON_POSITIONS.map(({ logo, x, y }, i) => (
+            <motion.div
+              key={logo}
+              className="absolute"
+              style={{
+                top: y,
+                left: x,
+                width: ICON_SIZE,
+                height: ICON_SIZE,
+              }}
+              custom={i}
+              variants={skillIconVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+            >
               <motion.div
-                key={logo}
-                className="absolute"
-                style={{
-                  top: y,
-                  left: x,
-                  width: ICON_SIZE,
-                  height: ICON_SIZE,
+                className="w-full h-full relative"
+                animate={{ rotate: -360 }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 20,
+                  ease: "linear",
                 }}
-                custom={i}
-                variants={skillIconVariants}
-                initial="initial"
-                animate="animate"
-                exit="exit"
               >
-                <motion.img
+                <Image
                   src={`/logo/${logo}`}
                   alt={logo.replace(".png", "")}
-                  className="w-full h-full object-contain"
-                  animate={{ rotate: -360 }}
-                  transition={{
-                    repeat: Infinity,
-                    duration: 20,
-                    ease: "linear",
-                  }}
+                  fill
+                  className="object-contain"
+                  sizes={`${ICON_SIZE}px`}
+                  priority
                 />
               </motion.div>
-            );
-          })}
+            </motion.div>
+          ))}
         </motion.div>
       </motion.div>
     </motion.div>
