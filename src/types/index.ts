@@ -12,13 +12,15 @@ export interface WorkInformation {
   description?: string;
 }
 
+export const ProjectType = ["Company", "Personal"] as const;
+
 export interface ProjectInformation {
-  id: number;
+  id: string;
   title: string;
   period: string;
   description: string;
   tags: string[];
-  projectType: "Company" | "Personal";
+  projectType: (typeof ProjectType)[number];
   backgroundImgUrl: string;
   githubUrl?: string;
   notionPageId?: string;

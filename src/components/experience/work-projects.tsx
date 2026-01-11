@@ -1,3 +1,4 @@
+"use client";
 import { useState, useMemo } from "react";
 import WorkCardList from "@/components/experience/work-card-list";
 import ProjectCardList from "@/components/experience/project-card-list";

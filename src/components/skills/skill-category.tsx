@@ -1,6 +1,6 @@
 import SkillCard from "@/components/skills/skill-card";
 import { type SkillInformation } from "@/types";
-import { AnimatedCard, AnimatedElement } from "@/components/animation";
+import { Animated } from "@/components/animation";
 
 interface SkillCategoryProps {
   categoryName: string;
@@ -12,8 +12,8 @@ export default function SkillCategory({
   skills,
 }: SkillCategoryProps) {
   return (
-    <AnimatedElement listChildren={true} animation="fadeInUp">
-      <AnimatedCard
+    <Animated.ListItem>
+      <Animated.Card
         hoverEffect="scale"
         className="h-full bg-light-card/30 dark:bg-dark-card/30 backdrop-blur-sm p-10 rounded-lg shadow-xl max-w-md w-full text-center"
       >
@@ -25,7 +25,7 @@ export default function SkillCategory({
             <SkillCard key={`${categoryName}_${skill.id}`} {...skill} />
           ))}
         </div>
-      </AnimatedCard>
-    </AnimatedElement>
+      </Animated.Card>
+    </Animated.ListItem>
   );
 }

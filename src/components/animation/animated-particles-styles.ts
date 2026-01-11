@@ -1,3 +1,4 @@
+"use client";
 const shapes = ["circle", "square", "triangle"] as const;
 const colors = ["orange", "sky", "purple", "green", "pink"] as const;
 export interface AnimatedParticleProps {

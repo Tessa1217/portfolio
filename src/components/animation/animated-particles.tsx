@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { getAnimatedParticleStyles } from "@/components/animation/animated-particles-styles";
 
@@ -7,22 +9,28 @@ interface AnimatedParticleProps {
   maxSize: number;
 }
 
-const AnimatedParticles = ({
+export default function AnimatedParticles({
   count,
   minSize,
   maxSize,
-}: AnimatedParticleProps) => {
-  const random = (min: number, max: number) =>
-    Math.random() * (max - min) + min;
+}: AnimatedParticleProps) {
+  const [particles] = useState(() => {
+    if (typeof window === "undefined") return [];
 
-  const particles = Array.from({ length: count }).map((_, i) => ({
-    id: i,
-    x: random(0, window.innerWidth),
-    y: random(0, window.innerHeight),
-    style: getAnimatedParticleStyles({ minSize, maxSize }),
-    delay: random(0, 10),
-    duration: random(1.5, 5),
-  }));
+    const random = (min: number, max: number) =>
+      Math.random() * (max - min) + min;
+
+    return Array.from({ length: count }).map((_, i) => ({
+      id: i,
+      x: random(0, window.innerWidth),
+      y: random(0, window.innerHeight),
+      animateX: [null, Math.random() * window.innerHeight],
+      animateY: [null, Math.random() * window.innerWidth],
+      style: getAnimatedParticleStyles({ minSize, maxSize }),
+      delay: random(0, 10),
+      duration: 10 + Math.random() * 5,
+    }));
+  });
 
   return (
     <div className="pointer-events-none fixed inset-0 overflow-hidden">
@@ -32,17 +40,17 @@ const AnimatedParticles = ({
           className={`absolute ${particle.style.classes}`}
           style={particle.style.styles}
           initial={{
-            x: random(0, window.innerWidth),
-            y: random(0, window.innerHeight),
+            x: particle.x,
+            y: particle.y,
             opacity: 0.5,
           }}
           animate={{
-            x: [null, Math.random() * window.innerHeight],
-            y: [null, Math.random() * window.innerWidth],
+            x: particle.animateX,
+            y: particle.animateY,
             opacity: [0.5, 1, 0.5],
           }}
           transition={{
-            duration: 10 + Math.random() * 5,
+            duration: particle.duration,
             repeat: Infinity,
             repeatType: "reverse",
             ease: "easeInOut",
@@ -51,6 +59,4 @@ const AnimatedParticles = ({
       ))}
     </div>
   );
-};
-
-export default AnimatedParticles;
+}
