@@ -25,9 +25,9 @@ function App() {
     <>
       <AnimatePresence>{isLoading && <AnimatedCover />}</AnimatePresence>
       {!isLoading && (
-        <div className="relative">
+        <div className="relative bg-light-background text-light-text dark:bg-dark-background dark:text-dark-text min-h-screen">
           <Navbar />
-          <div className="fixed inset-0 z-0 pointer-events-none bg-[#15182e]" />
+          <div className="fixed inset-0 z-0 pointer-events-none" />
           <div className="fixed w-full h-screen">
             <AnimatedParticles count={25} minSize={5} maxSize={60} />
           </div>
