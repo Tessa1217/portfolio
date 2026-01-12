@@ -1,14 +1,14 @@
 import { Section } from "@/components/animation/animated";
 import AnimatedText from "@/components/animation/animated-text";
 import { HERO_IDENTIFICATION, HERO_TEXT } from "@/lib/data";
-import HeroIllustration from "@/components/ui/hero-illustration";
+import HeroIllustration from "@/components/introduction/hero-illustration";
 
 export default function Introduction() {
   return (
     <Section
       id="home"
       as="section"
-      className="min-h-[100svh] flex flex-row items-center justify-center text-white"
+      className="min-h-svh flex flex-row items-center justify-center text-white"
     >
       <div className="container mx-auto xl:px-40 lg:px-20 md:px-15 px-12 flex flex-col-reverse md:flex-row items-center justify-between gap-12">
         <div className="w-full md:w-1/2 text-center md:text-left space-y-6">

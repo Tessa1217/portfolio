@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import "@/styles/style.css";
 
+import { AnimatePresence } from "framer-motion";
+import Navbar from "@/components/layout/navbar";
+import { ThemeProvider } from "@/contexts/theme-context";
+
 export const metadata: Metadata = {
   icons: "/developer-memoji.svg",
   title: "YuJin's Portfolio",
@@ -19,7 +23,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body>{children}</body>
+      <body>
+        <ThemeProvider>
+          <AnimatePresence mode="wait">
+            <div className="relative bg-light-background text-light-text dark:bg-dark-background dark:text-dark-text min-h-screen">
+              <Navbar />
+              {children}
+            </div>
+          </AnimatePresence>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

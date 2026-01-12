@@ -36,7 +36,7 @@ export default function WorkCard({
         ${
           selected
             ? "ring-2 ring-gray-300"
-            : "ring-1 ring-gray-600 hover:ring-green-400 hover:bg-gray-700"
+            : "ring-1 ring-gray-600 hover:ring-primary-active dark:hover:ring-secondary-hover hover:bg-gray-700"
         }
       `}
       >
@@ -50,7 +50,8 @@ export default function WorkCard({
             object-contain             
             border-2 border-transparent 
             transition-colors
-            group-hover:border-green-400
+            group-hover:border-primary
+            dark:group-hover:border-secondary
           "
           />
         </div>
@@ -61,12 +62,14 @@ export default function WorkCard({
             text-lg sm:text-base 
             font-semibold 
             truncate
-            ${selected ? "text-white" : "text-gray-300"}
+            text-light-text dark:text-dark-text
           `}
         >
           {company}
         </p>
-        <p className="text-xs text-white truncate">{period}</p>
+        <p className="text-xs text-light-text dark:text-dark-text truncate">
+          {period}
+        </p>
       </div>
     </div>
   );

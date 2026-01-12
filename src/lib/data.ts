@@ -163,7 +163,7 @@ export const WORK_EXPERIENCE = [
         projectType: "Company",
         backgroundImgUrl: "/illustration/project_4.png",
         githubUrl: "",
-        notionPageId: "",
+        notionPageId: "2e5184f7752480fbb16dfbbe9f9b0406",
       },
       {
         id: "daegu-science",
@@ -209,10 +209,10 @@ export const WORK_EXPERIENCE = [
       },
       {
         id: "admin-starter",
-        title: "사내 관리자 프레임워크 개발",
+        title: "관리자 사이트 Starter 프로젝트 구축",
         period: "2024.01-2024.07",
         description:
-          "사내 프로젝트의 관리자(Admin) 공통 기능을 분석하여 관리자 Framework 구축",
+          "관리자(Admin) 공통 기능을 분석하여 사내 진행 프로젝트에서 도입할 수 있도록 관리자 사이트 Starter 프로젝트를 구축",
         tags: [
           "Vue.js",
           "Pinia",
@@ -251,7 +251,7 @@ export const PERSONAL_PROJECT_EXPERIENCE = [
     projectType: "Personal",
     backgroundImgUrl: "/illustration/project_5.png",
     githubUrl: "https://github.com/Tessa1217/lowcode-generator",
-    notionPageId: "",
+    notionPageId: "2e5184f77524800597f9c3b2384dff27",
   },
   {
     id: "personal-portfolio",
@@ -262,7 +262,7 @@ export const PERSONAL_PROJECT_EXPERIENCE = [
     tags: ["React.js", "Vite", "Framer Motion", "Tailwind CSS"],
     projectType: "Personal",
     backgroundImgUrl: "/illustration/project_3.png",
-    githubUrl: "",
+    githubUrl: "https://github.com/Tessa1217/portfolio",
     notionPageId: "23f184f7752480f1ad9fe60afd3ade16",
   },
 ];
