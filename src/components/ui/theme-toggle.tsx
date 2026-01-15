@@ -1,6 +1,7 @@
 "use client";
 import { useTheme } from "@/contexts/theme-context";
-import { BiMoon, BiSun } from "react-icons/bi";
+import { BiMoon } from "@react-icons/all-files/bi/BiMoon";
+import { BiSun } from "@react-icons/all-files/bi/BiSun";
 
 export default function ThemeToggle() {
   const { toggleTheme, isDarkTheme } = useTheme();

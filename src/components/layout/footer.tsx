@@ -1,6 +1,8 @@
 import Link from "next/link";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { SiNotion } from "react-icons/si";
+import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
+import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
+import { SiNotion } from "@react-icons/all-files/si/SiNotion";
+
 export default function Footer() {
   return (
     <footer className="w-full bg-light-background-reverse text-light-text-secondary py-10 px-6">

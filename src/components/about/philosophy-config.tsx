@@ -1,6 +1,7 @@
 import type { PhilosophyKey } from "@/types/philosophy";
-
-import { FaLightbulb, FaUsers, FaRocket } from "react-icons/fa";
+import { FaLightbulb } from "@react-icons/all-files/fa/FaLightbulb";
+import { FaUsers } from "@react-icons/all-files/fa/FaUsers";
+import { FaRocket } from "@react-icons/all-files/fa/FaRocket";
 
 export const ICON_MAP: Record<PhilosophyKey, React.ReactElement> = {
   curiosity: <FaLightbulb size={30} className="text-white" />,

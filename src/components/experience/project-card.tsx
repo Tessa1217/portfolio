@@ -1,6 +1,7 @@
+import Image from "next/image";
 import { type ProjectInformation } from "@/types";
-import { FaGithub } from "react-icons/fa";
-import { RxNotionLogo } from "react-icons/rx";
+import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
+import { SiNotion } from "@react-icons/all-files/si/SiNotion";
 import { Animated } from "@/components/animation";
 import ProjectLink from "@/components/experience/project-link";
 
@@ -20,11 +21,14 @@ export default function ProjectCard({
       className="relative h-full bg-light-card dark:bg-dark-card rounded-2xl overflow-hidden transition-transform duration-200 cursor-pointer"
     >
       {/* Background Image Overlay */}
-      <div
+      <Image
+        src={backgroundImgUrl}
+        alt={title}
+        layout="fill"
+        objectFit="cover"
+        objectPosition="center"
         className="absolute inset-0 bg-cover bg-bottom opacity-20"
-        style={{ backgroundImage: `url(${backgroundImgUrl})` }}
       />
-
       {/* Content Container - Flexbox로 내부 레이아웃 제어 */}
       <div className="relative h-full p-6 flex flex-col">
         {/* Type Badge - 고정 영역 */}
@@ -79,7 +83,7 @@ export default function ProjectCard({
               href={`/project/${id}`}
               linkType="Notion"
               className="text-light-text dark:text-dark-text hover:text-white transition-colors"
-              icon={<RxNotionLogo size={30} />}
+              icon={<SiNotion size={30} />}
             />
           )}
         </div>

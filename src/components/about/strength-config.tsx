@@ -1,7 +1,12 @@
 import type { StrengthKey } from "@/types/strength";
-import { FaLayerGroup, FaBook, FaCube, FaCode } from "react-icons/fa";
-import { SiTypescript, SiReact, SiVuedotjs } from "react-icons/si";
-import { GiCupcake } from "react-icons/gi";
+import { FaLayerGroup } from "@react-icons/all-files/fa/FaLayerGroup";
+import { FaBook } from "@react-icons/all-files/fa/FaBook";
+import { FaCube } from "@react-icons/all-files/fa/FaCube";
+import { FaCode } from "@react-icons/all-files/fa/FaCode";
+import { SiTypescript } from "@react-icons/all-files/si/SiTypescript";
+import { SiReact } from "@react-icons/all-files/si/SiReact";
+import { SiVueDotJs } from "@react-icons/all-files/si/SiVueDotJs";
+import { GiCupcake } from "@react-icons/all-files/gi/GiCupcake";
 
 export const ICON_MAP: Record<StrengthKey, React.ReactElement> = {
   architecture: <FaLayerGroup size={30} className="text-white" />,
@@ -44,7 +49,7 @@ export const COLOR_CLASSES: Record<string, StrengthColorProps> = {
 } as const;
 
 export const TECH_ICON_MAP: Record<string, React.ReactElement> = {
-  "Vue.js 3": <SiVuedotjs />,
+  "Vue.js 3": <SiVueDotJs />,
   TypeScript: <SiTypescript />,
   Composables: <FaCode />,
   "React 19": <SiReact />,

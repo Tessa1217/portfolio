@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { NavItem } from "@/components/layout/navbar";
 import { notFound } from "next/navigation";
 import ClientNotionRenderer from "@/components/markdown/ClientNotionRenderer";
 import { getNotionPageById } from "@/lib/notion-api";
@@ -48,5 +49,17 @@ export default async function ProjectDetailPage({
 
   const recordMap = await getNotionPageById(project.notionPageId);
 
-  return <ClientNotionRenderer recordMap={recordMap} />;
+  return (
+    <div className="min-h-screen bg-light-background dark:bg-dark-background py-20">
+      <article className="container mx-auto px-6 max-w-4xl">
+        <NavItem
+          as="div"
+          label="← Back to Experience"
+          sectionId="experience"
+          className="inline-flex items-center gap-2 text-light-text dark:text-dark-text hover:opacity-70 transition-opacity mb-8"
+        />
+        <ClientNotionRenderer recordMap={recordMap} />
+      </article>
+    </div>
+  );
 }
