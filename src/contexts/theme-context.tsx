@@ -1,6 +1,6 @@
 "use client";
 import { createContext, useContext, useEffect } from "react";
-import useLocalStorage from "@/hooks/useLocalStorage";
+import useStorage from "@/hooks/useLocalStorage";
 
 type Theme = "dark" | "light";
 
@@ -14,7 +14,7 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useLocalStorage<Theme>("theme", "dark");
+  const [theme, setTheme] = useStorage<Theme>("theme", "local", "dark");
 
   useEffect(() => {
     if (window === undefined) return;
