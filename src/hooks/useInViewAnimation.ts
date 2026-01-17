@@ -1,3 +1,4 @@
+"use client";
 import { useAnimationControls } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { viewportOptions } from "@/constants/animation/animation";

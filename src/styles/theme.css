@@ -1,35 +1,182 @@
 @theme {
-  /* Light theme colors */
-  --color-light-background: #f9fafb;
-  --color-light-background-reverse: #15182e;
-  --color-light-card: #ffffff;
-  --color-light-text: #15182e;
-  --color-light-text-secondary: #6b7280;
-  --color-light-primary: #3b82f6;
-  --color-light-border: #e5e7eb;
+  --color-primary: oklch(0.75 0.15 195); /* Vibrant Cyan */
+  --color-primary-hover: oklch(0.68 0.18 195); /* Darker on hover */
+  --color-primary-active: oklch(0.62 0.2 195); /* Even darker on click */
+  --color-primary-light: oklch(0.85 0.1 195); /* Light variant */
+  --color-primary-subtle: oklch(0.95 0.05 195); /* Very subtle bg */
 
-  /* Dark theme colors */
-  --color-dark-background: #15182e;
-  --color-dark-background-reverse: #f9fafb;
-  --color-dark-card: #111827;
-  --color-dark-text: #f9fafb;
-  --color-dark-text-secondary: #9ca3af;
-  --color-dark-primary: #60a5fa;
-  --color-dark-border: #374151;
+  /* Secondary Colors (Complementary Purple/Violet) */
+  --color-secondary: oklch(0.65 0.18 285); /* Purple */
+  --color-secondary-hover: oklch(0.58 0.2 285);
+  --color-secondary-active: oklch(0.52 0.22 285);
 
-  --font-display: "PyeojinGothic-Bold", "sans-serif";
-  --font-header: "Paperlogy-8ExtraBold";
+  --color-accent-green: oklch(0.75 0.15 155); /* Green */
+  --color-accent-green-hover: oklch(0.68 0.18 155); /* Darker green on hover */
+  --color-accent-green-active: oklch(0.62 0.2 155); /* Even darker on click */
+  --color-accent-green-light: oklch(0.85 0.12 155); /* Light variant */
+  --color-accent-green-subtle: oklch(0.95 0.06 155); /* Very subtle bg */
 
-  /** particles */
-  --color-beige: oklch(0.9769 0.011 63.36);
-  --color-wine-red: oklch(0.5253 0.155 17.61);
-  --color-orange: oklch(0.7883 0.1326 46.99);
-  --color-font-default: oklch(0.3012 0 0);
-  --color-orange: oklch(0.7682 0.1422 40.26);
-  --color-sky-blue: oklch(0.8548 0.095 224.65);
-  --color-light-purple: oklch(0.7723 0.1204 284.28);
-  --color-green: oklch(0.889 0.1786 167.29);
-  --color-pink: oklch(0.8333 0.1498 324.86);
+  /* Accent Colors */
+  --color-accent-orange: oklch(0.75 0.15 45); /* Warm accent */
+  --color-accent-red: oklch(0.65 0.2 25); /* Error/Warning */
+  --color-accent-yellow: oklch(0.85 0.15 85); /* Highlight */
 
-  --color-primary: #3ce3bd;
+  /* Backgrounds */
+  --color-light-background: oklch(0.98 0.005 240); /* Very light blue-gray */
+  --color-light-background-secondary: oklch(
+    0.96 0.008 240
+  ); /* Slightly darker */
+  --color-light-background-reverse: oklch(0.15 0.02 250); /* Dark reverse */
+
+  /* Cards & Surfaces */
+  --color-light-card: oklch(1 0 0); /* Pure white */
+  --color-light-card-hover: oklch(0.99 0.005 240); /* Subtle hover */
+  --color-light-card-elevated: oklch(1 0 0); /* Elevated cards */
+
+  /* Text */
+  --color-light-text: oklch(0.2 0.02 250); /* Almost black */
+  --color-light-text-secondary: oklch(0.45 0.01 250); /* Gray */
+  --color-light-text-tertiary: oklch(0.6 0.01 250); /* Lighter gray */
+  --color-light-text-reverse: oklch(0.98 0.005 240); /* White text */
+  --color-light-text-muted: oklch(0.7 0.01 250); /* Very light gray */
+
+  /* Interactive Elements */
+  --color-light-hover: oklch(0.95 0.01 240); /* Hover state */
+  --color-light-active: oklch(0.92 0.015 240); /* Active/pressed state */
+  --color-light-focus: oklch(0.75 0.15 195); /* Focus ring (primary) */
+  --color-light-selected: oklch(0.9 0.08 195); /* Selected state */
+
+  /* Borders & Dividers */
+  --color-light-border: oklch(0.9 0.005 240); /* Default border */
+  --color-light-border-hover: oklch(0.8 0.01 240); /* Hover border */
+  --color-light-border-focus: oklch(0.75 0.15 195); /* Focus border */
+  --color-light-divider: oklch(0.94 0.005 240); /* Divider lines */
+
+  /* Shadows */
+  --color-light-shadow-sm: oklch(0.2 0 0 / 0.05); /* Small shadow */
+  --color-light-shadow-md: oklch(0.2 0 0 / 0.1); /* Medium shadow */
+  --color-light-shadow-lg: oklch(0.2 0 0 / 0.15); /* Large shadow */
+  --color-light-shadow-xl: oklch(0.2 0 0 / 0.2); /* Extra large shadow */
+
+  /* Overlays */
+  --color-light-overlay: oklch(0 0 0 / 0.5); /* Modal overlay */
+  --color-light-overlay-subtle: oklch(0 0 0 / 0.2); /* Subtle overlay */
+
+  /** DARK THEME */
+
+  /* Backgrounds */
+  --color-dark-background: oklch(0.15 0.02 250); /* Deep blue-black */
+  --color-dark-background-secondary: oklch(
+    0.18 0.02 250
+  ); /* Slightly lighter */
+  --color-dark-background-reverse: oklch(0.98 0.005 240); /* Light reverse */
+
+  /* Cards & Surfaces */
+  --color-dark-card: oklch(0.2 0.02 250); /* Dark card */
+  --color-dark-card-hover: oklch(0.23 0.025 250); /* Hover state */
+  --color-dark-card-elevated: oklch(0.22 0.025 250); /* Elevated cards */
+
+  /* Text */
+  --color-dark-text: oklch(0.95 0.005 240); /* Almost white */
+  --color-dark-text-secondary: oklch(0.7 0.01 240); /* Gray */
+  --color-dark-text-tertiary: oklch(0.55 0.01 240); /* Darker gray */
+  --color-dark-text-reverse: oklch(0.2 0.02 250); /* Dark text */
+  --color-dark-text-muted: oklch(0.45 0.01 240); /* Very dark gray */
+
+  /* Interactive Elements */
+  --color-dark-hover: oklch(0.25 0.025 250); /* Hover state */
+  --color-dark-active: oklch(0.28 0.03 250); /* Active/pressed state */
+  --color-dark-focus: oklch(0.75 0.15 195); /* Focus ring (primary) */
+  --color-dark-selected: oklch(0.3 0.08 195); /* Selected state */
+
+  /* Borders & Dividers */
+  --color-dark-border: oklch(0.3 0.02 250); /* Default border */
+  --color-dark-border-hover: oklch(0.4 0.025 250); /* Hover border */
+  --color-dark-border-focus: oklch(0.75 0.15 195); /* Focus border */
+  --color-dark-divider: oklch(0.25 0.02 250); /* Divider lines */
+
+  /* Shadows */
+  --color-dark-shadow-sm: oklch(0 0 0 / 0.3); /* Small shadow */
+  --color-dark-shadow-md: oklch(0 0 0 / 0.4); /* Medium shadow */
+  --color-dark-shadow-lg: oklch(0 0 0 / 0.5); /* Large shadow */
+  --color-dark-shadow-xl: oklch(0 0 0 / 0.6); /* Extra large shadow */
+
+  /* Overlays */
+  --color-dark-overlay: oklch(0 0 0 / 0.7); /* Modal overlay */
+  --color-dark-overlay-subtle: oklch(0 0 0 / 0.4); /* Subtle overlay */
+
+  /* Success */
+  --color-success: oklch(0.7 0.15 155);
+  --color-success-light: oklch(0.85 0.1 155);
+  --color-success-dark: oklch(0.55 0.18 155);
+
+  /* Error */
+  --color-error: oklch(0.6 0.2 25);
+  --color-error-light: oklch(0.75 0.15 25);
+  --color-error-dark: oklch(0.45 0.22 25);
+
+  /* Warning */
+  --color-warning: oklch(0.75 0.15 75);
+  --color-warning-light: oklch(0.85 0.12 75);
+  --color-warning-dark: oklch(0.6 0.18 75);
+
+  /* Info */
+  --color-info: oklch(0.65 0.15 230);
+  --color-info-light: oklch(0.8 0.12 230);
+  --color-info-dark: oklch(0.5 0.18 230);
+
+  /** Particle Colors */
+
+  --color-particle-orange: oklch(0.77 0.14 45);
+  --color-particle-cyan: oklch(0.8 0.12 195);
+  --color-particle-purple: oklch(0.75 0.12 285);
+  --color-particle-green: oklch(0.82 0.14 155);
+  --color-particle-pink: oklch(0.8 0.15 340);
+  --color-particle-yellow: oklch(0.85 0.15 85);
+
+  /* ============================================
+     Gradients
+     ============================================ */
+  --gradient-primary: linear-gradient(
+    135deg,
+    oklch(0.75 0.15 195) 0%,
+    oklch(0.65 0.18 285) 100%
+  );
+
+  --gradient-warm: linear-gradient(
+    135deg,
+    oklch(0.75 0.15 45) 0%,
+    oklch(0.8 0.15 340) 100%
+  );
+
+  --gradient-cool: linear-gradient(
+    135deg,
+    oklch(0.8 0.12 195) 0%,
+    oklch(0.75 0.12 285) 100%
+  );
+
+  --gradient-glass: linear-gradient(
+    135deg,
+    oklch(1 0 0 / 0.1) 0%,
+    oklch(1 0 0 / 0.05) 100%
+  );
+
+  /* ============================================
+     Z-index Layers
+     ============================================ */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+
+  /* ============================================
+     Transitions
+     ============================================ */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
 }

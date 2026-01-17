@@ -1,6 +1,6 @@
 import type { ProjectInformation } from "@/types";
 import ProjectCard from "@/components/experience/project-card";
-import { AnimatedList, AnimatedElement } from "@/components/animation";
+import { Animated } from "@/components/animation";
 
 interface ProjectCardListProps {
   projects: ProjectInformation[];
@@ -9,13 +9,9 @@ interface ProjectCardListProps {
 
 const ProjectCardList = ({ projects, className }: ProjectCardListProps) => {
   return (
-    <AnimatedList staggerSpeed="normal" viewport="once" className={className}>
+    <Animated.List staggerSpeed="normal" viewport="once" className={className}>
       {projects.map((project) => (
-        <AnimatedElement
-          key={project.id}
-          listChildren={true}
-          animation="fadeInUp"
-        >
+        <Animated.ListItem key={project.id} animation="fadeInUp">
           <ProjectCard
             id={project.id}
             title={project.title}
@@ -27,9 +23,9 @@ const ProjectCardList = ({ projects, className }: ProjectCardListProps) => {
             githubUrl={project.githubUrl}
             notionPageId={project.notionPageId}
           />
-        </AnimatedElement>
+        </Animated.ListItem>
       ))}
-    </AnimatedList>
+    </Animated.List>
   );
 };
 

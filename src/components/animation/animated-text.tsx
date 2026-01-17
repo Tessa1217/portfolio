@@ -1,3 +1,4 @@
+"use client";
 import { useEffect } from "react";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { cursorVariants } from "@/constants/animation/animation";
@@ -10,13 +11,13 @@ interface AnimatedTextProps {
   showCursor?: boolean;
 }
 
-const AnimatedText = ({
+export default function AnimatedText({
   texts,
   className,
   speed = 200,
   delay = 1,
   showCursor = true,
-}: AnimatedTextProps) => {
+}: AnimatedTextProps) {
   const textIndex = useMotionValue(0);
   const baseText = useTransform(textIndex, (latest) => texts[latest] || "");
   const count = useMotionValue(0);
@@ -65,6 +66,4 @@ const AnimatedText = ({
       )}
     </div>
   );
-};
-
-export default AnimatedText;
+}

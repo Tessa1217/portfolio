@@ -7,6 +7,110 @@ export const HERO_TEXT = [
   "사용자 경험을 극대화하는",
 ];
 
+export const PHILOSOPHY_ABOUT = [
+  {
+    key: "curiosity",
+    title: "끊임없는 탐구",
+    description:
+      "새로운 기술을 학습하고 실험하며, 프로젝트에 적용하는 과정을 통해 지속적으로 성장합니다.",
+  },
+  {
+    key: "share",
+    title: "지식 공유",
+    description:
+      "기술 세미나와 문서화를 통해 팀원들과 인사이트를 공유하며 함께 성장하는 문화를 만듭니다.",
+  },
+  {
+    key: "enhancement",
+    title: "생산성 향상",
+    description:
+      " 디자인 시스템과 공통 컴포넌트로 팀 전체의 개발 효율성을 높이는 데 집중합니다.",
+  },
+];
+
+export const STRENGTH_ABOUT = [
+  {
+    key: "architecture",
+    title: "아키텍처 설계 및 기술 도입 주도",
+    detailType: "stacks",
+    details: [
+      {
+        title: "레거시 모던화 전문",
+        description: "Spring MVC + JSP → Vue.js 3 전환 프로젝트 다수 주도",
+      },
+      {
+        title: "컴포넌트 중심 설계",
+        description: "Pinia 상태 관리 및 Composable 패턴 적용",
+      },
+      {
+        title: "모노레포 구조",
+        description: "Turborepo + pnpm workspace로 재사용성 극대화",
+      },
+    ],
+    stacks: ["Vue.js 3", "TypeScript", "Composables"],
+  },
+  {
+    key: "culture",
+    title: "지식 공유 및 팀 문화 조성",
+    detailType: "impacts",
+    details: [
+      {
+        title: "기술 세미나 주도",
+        description:
+          "Vue.js 마이그레이션 가이드, 성능 최적화 등 정기 세션 진행",
+      },
+      {
+        title: "문서화 문화",
+        description: "가이드 문서 4건+ 작성으로 팀 온보딩 시간 단축",
+      },
+      {
+        title: "지식 공유 문화",
+        description: "온보딩 세션 및 코드 리뷰를 통한 팀 역량 강화",
+      },
+    ],
+    impacts: [
+      {
+        number: 4,
+        suffix: "+",
+        impact: "가이드 문서",
+      },
+      {
+        number: 2,
+        suffix: "+",
+        impact: "기술 세미나",
+      },
+      {
+        number: 100,
+        suffix: "%",
+        impact: "팀 커버리지",
+      },
+    ],
+  },
+  {
+    key: "platform",
+    title: "플랫폼 지향 개발",
+    detailType: "stacks",
+    details: [
+      {
+        title: "Starter Template 시스템 구축",
+        description:
+          "Atomic Design 기반 Starter Template 시스템 설계 및 전사 적용",
+      },
+      {
+        title: "디자인 시스템 구축",
+        description:
+          "일관된 UI/UX를 위한 토큰 시스템 구축 및 개발 생산성 향상을 위한 디자인 시스템 기반 UI 시스템 구축",
+      },
+      {
+        title: "개발 도구",
+        description:
+          "UI 코드 제너레이터 개발로 반복 작업 자동화에 대한 개선 방안 모색",
+      },
+    ],
+    stacks: ["React 19", "Vanilla Extract", "Turborepo"],
+  },
+];
+
 export const QUESTION_ANS_ANSWER = [
   {
     key: "question_1",
@@ -39,7 +143,7 @@ export const WORK_EXPERIENCE = [
     logoUrl: "/logo/Company_1_logo.png",
     projects: [
       {
-        id: 1,
+        id: "daegu-cloud",
         title: "대구광역시 클라우드 네이티브 전환 사업",
         period: "2025-09-현재",
         description:
@@ -59,10 +163,10 @@ export const WORK_EXPERIENCE = [
         projectType: "Company",
         backgroundImgUrl: "/illustration/project_4.png",
         githubUrl: "",
-        notionPageId: "",
+        notionPageId: "2e5184f7752480fbb16dfbbe9f9b0406",
       },
       {
-        id: 2,
+        id: "daegu-science",
         title: "국립대구과학관 홈페이지 개편",
         period: "2025.02-2025.05",
         description:
@@ -82,7 +186,7 @@ export const WORK_EXPERIENCE = [
         notionPageId: "239184f775248089bfe1e54251392601",
       },
       {
-        id: 3,
+        id: "edunet",
         title: "에듀넷 티-클리어 클라우드 전환 및 서비스 재구조화",
         period: "2024.08-2025.02",
         description:
@@ -104,11 +208,11 @@ export const WORK_EXPERIENCE = [
         notionPageId: "239184f77524806bba34ebde22ca0fda",
       },
       {
-        id: 4,
-        title: "사내 관리자 프레임워크 개발",
+        id: "admin-starter",
+        title: "관리자 사이트 Starter 프로젝트 구축",
         period: "2024.01-2024.07",
         description:
-          "사내 프로젝트의 관리자(Admin) 공통 기능을 분석하여 관리자 Framework 구축",
+          "관리자(Admin) 공통 기능을 분석하여 사내 진행 프로젝트에서 도입할 수 있도록 관리자 사이트 Starter 프로젝트를 구축",
         tags: [
           "Vue.js",
           "Pinia",
@@ -130,7 +234,7 @@ export const WORK_EXPERIENCE = [
 
 export const PERSONAL_PROJECT_EXPERIENCE = [
   {
-    id: 1,
+    id: "low-code-generator",
     title: "Low-Code UI Generator",
     period: "2025.11-2025.12",
     description:
@@ -147,10 +251,10 @@ export const PERSONAL_PROJECT_EXPERIENCE = [
     projectType: "Personal",
     backgroundImgUrl: "/illustration/project_5.png",
     githubUrl: "https://github.com/Tessa1217/lowcode-generator",
-    notionPageId: "",
+    notionPageId: "2e5184f77524800597f9c3b2384dff27",
   },
   {
-    id: 2,
+    id: "personal-portfolio",
     title: "YK Portfolio",
     period: "2025.06-2025.07",
     description:
@@ -158,7 +262,7 @@ export const PERSONAL_PROJECT_EXPERIENCE = [
     tags: ["React.js", "Vite", "Framer Motion", "Tailwind CSS"],
     projectType: "Personal",
     backgroundImgUrl: "/illustration/project_3.png",
-    githubUrl: "",
+    githubUrl: "https://github.com/Tessa1217/portfolio",
     notionPageId: "23f184f7752480f1ad9fe60afd3ade16",
   },
 ];
