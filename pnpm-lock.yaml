@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@react-icons/all-files':
+        specifier: ^4.1.0
+        version: 4.1.0(react@19.2.3)
       framer-motion:
         specifier: ^12.24.0
         version: 12.25.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -23,9 +26,6 @@ importers:
       react-dom:
         specifier: 19.2.3
         version: 19.2.3(react@19.2.3)
-      react-icons:
-        specifier: ^5.5.0
-        version: 5.5.0(react@19.2.3)
       react-intersection-observer:
         specifier: ^9.16.0
         version: 9.16.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -436,6 +436,11 @@ packages:
   '@nolyfill/is-core-module@1.0.39':
     resolution: {integrity: sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==}
     engines: {node: '>=12.4.0'}
+
+  '@react-icons/all-files@4.1.0':
+    resolution: {integrity: sha512-hxBI2UOuVaI3O/BhQfhtb4kcGn9ft12RWAFVMUeNjqqhLsHvFtzIkFaptBJpFDANTKoDfdVoHTKZDlwKCACbMQ==}
+    peerDependencies:
+      react: '*'
 
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
@@ -1859,11 +1864,6 @@ packages:
       react: '>=16.8.1'
       react-dom: '>=16.8.1'
 
-  react-icons@5.5.0:
-    resolution: {integrity: sha512-MEFcXdkP3dLo8uumGI5xN3lDFNsRtrjbOEKDLD7yv76v4wpnEq2Lt2qeHaQOr34I/wPN3s3+N08WkQ+CW37Xiw==}
-    peerDependencies:
-      react: '*'
-
   react-image@4.1.0:
     resolution: {integrity: sha512-qwPNlelQe9Zy14K2pGWSwoL+vHsAwmJKS6gkotekDgRpcnRuzXNap00GfibD3eEPYu3WCPlyIUUNzcyHOrLHjw==}
     peerDependencies:
@@ -2590,6 +2590,10 @@ snapshots:
       fastq: 1.20.1
 
   '@nolyfill/is-core-module@1.0.39': {}
+
+  '@react-icons/all-files@4.1.0(react@19.2.3)':
+    dependencies:
+      react: 19.2.3
 
   '@rtsao/scc@1.1.0': {}
 
@@ -4157,10 +4161,6 @@ snapshots:
     dependencies:
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
-
-  react-icons@5.5.0(react@19.2.3):
-    dependencies:
-      react: 19.2.3
 
   react-image@4.1.0(@babel/runtime@7.28.4)(react-dom@19.2.3(react@19.2.3))(react@19.2.3):
     dependencies:
