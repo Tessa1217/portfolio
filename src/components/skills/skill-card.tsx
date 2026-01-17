@@ -6,7 +6,7 @@ export default function SkillCard({
   skillIconUrl,
 }: SkillInformation) {
   return (
-    <div className="flex items-center gap-2 w-full md:w-auto mb-3">
+    <div className="flex items-center flex-wrap gap-2 w-[60%] md:w-auto mb-3">
       <Image
         src={skillIconUrl}
         alt={skillName}

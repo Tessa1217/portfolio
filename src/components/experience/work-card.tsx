@@ -24,12 +24,12 @@ export default function WorkCard({
         whileHover={{ scale: 1.02 }}
         className={`
         w-full
-        max-w-[100px]
+        max-w-25
         flex items-center 
         space-x-3 px-4 py-2 
         bg-white
         rounded-md
-        min-h-[80px] 
+        min-h-20 
         transition-all duration-200
         relative
         z-20
