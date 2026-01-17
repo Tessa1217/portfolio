@@ -53,3 +53,8 @@ h3,
   font-family: var(--font-inter);
   font-weight: 300;
 }
+
+/* Safari 및 Mobile Safe Viewport Height 대응 */
+.min-h-svh {
+  min-height: 100svh;
+}
