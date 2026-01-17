@@ -20,6 +20,9 @@ importers:
       notion-client:
         specifier: ^7.7.3
         version: 7.7.3
+      notion-types:
+        specifier: ^7.7.3
+        version: 7.7.3
       prismjs:
         specifier: ^1.30.0
         version: 1.30.0
