@@ -12,7 +12,7 @@ export default function SkillCategory({
   skills,
 }: SkillCategoryProps) {
   return (
-    <Animated.ListItem>
+    <Animated.ListItem className="flex justify-center">
       <Animated.Card
         hoverEffect="scale"
         className="h-full bg-light-card/30 dark:bg-dark-card/30 backdrop-blur-sm p-10 rounded-lg shadow-xl max-w-md w-full text-center"

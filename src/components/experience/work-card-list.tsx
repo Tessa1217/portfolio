@@ -15,7 +15,7 @@ export default function WorkCardList({
   return (
     <ul className="flex md:flex-col overflow-x-auto md:overflow-visible space-x-4 md:space-x-0 md:space-y-4 pb-2 mb-2 md:pb-0 border-b md:border-b-0 md:border-r border-gray-600">
       {cards.map((card) => (
-        <li key={card.company} className="flex-shrink-0 md:flex-shrink-0">
+        <li key={card.company} className="shrink-0">
           <WorkCard
             {...card}
             selected={card.id === selectedWorkId}

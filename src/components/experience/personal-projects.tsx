@@ -9,23 +9,7 @@ const PersonalProjects = () => {
       <section className="col-span-12">
         <ProjectCardList
           projects={projects}
-          className="
-    w-full 
-    max-w-7xl 
-    mx-auto 
-    grid 
-    gap-6                      
-    grid-cols-1 
-    sm:grid-cols-2 
-    lg:grid-cols-3
-    
-    /* 같은 행의 카드 높이 통일 */
-    items-stretch
-    [&>*]:h-full
-    
-    /* 최소 높이 설정 (선택사항) */
-    auto-rows-[minmax(400px,auto)]
-  "
+          className="w-full max-w-7xl mx-auto grid gap-6 grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 items-stretch *:h-full auto-cols-[minmax(400px, auto)] auto-rows-[minmax(400px,auto)]"
         />
       </section>
     </div>

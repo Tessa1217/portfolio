@@ -11,7 +11,11 @@ const ProjectCardList = ({ projects, className }: ProjectCardListProps) => {
   return (
     <Animated.List staggerSpeed="normal" viewport="once" className={className}>
       {projects.map((project) => (
-        <Animated.ListItem key={project.id} animation="fadeInUp">
+        <Animated.ListItem
+          key={project.id}
+          animation="fadeInUp"
+          className="flex justify-center"
+        >
           <ProjectCard
             id={project.id}
             title={project.title}

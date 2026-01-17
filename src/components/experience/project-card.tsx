@@ -18,7 +18,7 @@ export default function ProjectCard({
   return (
     <Animated.Card
       hoverEffect="glow"
-      className="relative h-full bg-light-card dark:bg-dark-card rounded-2xl overflow-hidden transition-transform duration-200 cursor-pointer"
+      className="relative w-full max-w-100 h-full max-h-100 bg-light-card dark:bg-dark-card rounded-2xl overflow-hidden transition-transform duration-200 cursor-pointer flex items-center space-x-3 px-4 py-2 z-20"
     >
       {/* Background Image Overlay */}
       <Image
@@ -73,7 +73,7 @@ export default function ProjectCard({
               linkType="Github"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-light-text dark:text-dark-text hover:text-white transition-colors"
+              className="text-light-text dark:text-dark-text hover:text-dark-text-muted dark:hover:text-light-text-muted transition-colors"
               aria-label="GitHub 페이지 열기"
               icon={<FaGithub size={30} />}
             />
@@ -82,7 +82,7 @@ export default function ProjectCard({
             <ProjectLink
               href={`/project/${id}`}
               linkType="Notion"
-              className="text-light-text dark:text-dark-text hover:text-white transition-colors"
+              className="text-light-text dark:text-dark-text hover:text-dark-text-muted dark:hover:text-light-text-muted transition-colors"
               icon={<SiNotion size={30} />}
             />
           )}
