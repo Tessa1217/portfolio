@@ -1,14 +1,21 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
-import "@/styles/style.css";
-
 import { AnimatePresence } from "framer-motion";
 import Navbar from "@/components/layout/navbar";
 import { ThemeProvider } from "@/contexts/theme-context";
+import { Inter, Poppins } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
+  variable: "--font-inter",
+});
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "600", "700", "800"],
+  variable: "--font-poppins",
+});
+
+import "@/styles/style.css";
 
 export const metadata: Metadata = {
   icons: "/images/developer-memoji.svg",
@@ -28,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={`${inter.variable} font-sans`}>
+      <body className={`${inter.variable} ${poppins.variable} font-sans`}>
         <ThemeProvider>
           <AnimatePresence mode="wait">
             <div className="relative bg-light-background text-light-text dark:bg-dark-background dark:text-dark-text min-h-screen">

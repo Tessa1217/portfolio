@@ -134,12 +134,6 @@
   --color-particle-pink: oklch(0.8 0.15 340);
   --color-particle-yellow: oklch(0.85 0.15 85);
 
-  /** Typography */
-  --font-display: "PyeojinGothic-Bold", "sans-serif";
-  --font-header: "Paperlogy-8ExtraBold", "sans-serif";
-  --font-body: system-ui, -apple-system, sans-serif;
-  --font-mono: "JetBrains Mono", "Fira Code", monospace;
-
   /* ============================================
      Gradients
      ============================================ */
