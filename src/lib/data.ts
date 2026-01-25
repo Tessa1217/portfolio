@@ -224,7 +224,7 @@ export const WORK_EXPERIENCE = [
           "MySQL",
         ],
         projectType: "Company",
-        backgroundImgUrl: "/illustration/project_3.png",
+        backgroundImgUrl: "/illustration/project_6.png",
         githubUrl: "",
         notionPageId: "239184f7752480f3817dc1b9fe2a4d29",
       },

@@ -77,6 +77,7 @@ function StrengthCard({ strength, colorVariant }: StrengthCardComponentProps) {
   return (
     <Animated.Card
       hoverEffect="glow"
+      viewport="aggressive"
       className="group p-8 bg-linear-to-br from-light-card to-light-background-secondary dark:from-dark-card dark:to-dark-background-secondary rounded-2xl border border-light-border dark:border-dark-border"
     >
       <div className="flex items-start gap-6">
@@ -141,7 +142,7 @@ export default function Strength() {
   const strengths = STRENGTH_ABOUT as StrengthCardProps[];
   return (
     <>
-      <Animated.Box animation="fadeInUp" className="mb-8">
+      <Animated.Box animation="fadeInUp" viewport="aggressive" className="mb-8">
         <h3 className="text-3xl font-bold text-light-text dark:text-dark-text mb-12 text-center">
           Core Strengths
         </h3>

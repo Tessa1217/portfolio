@@ -8,7 +8,7 @@ export default function Introduction() {
     <Section
       id="home"
       as="section"
-      className="min-h-svh flex flex-row items-center justify-center text-white"
+      className="min-h-screen md:min-h-dvh flex flex-row items-center justify-center text-white"
     >
       <div className="container mx-auto xl:px-40 lg:px-20 md:px-15 px-12 flex flex-col-reverse md:flex-row items-center justify-between gap-12">
         <div className="w-full md:w-1/2 text-center md:text-left space-y-6">

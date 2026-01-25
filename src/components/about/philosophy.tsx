@@ -12,6 +12,7 @@ export function PhilosophyCard({
   return (
     <Animated.Card
       hoverEffect="lift"
+      viewport="aggressive"
       className="p-6 bg-light-card dark:bg-dark-card rounded-2xl border border-light-border dark:border-dark-border"
     >
       <div className="flex flex-row align-center items-center">
@@ -35,7 +36,7 @@ export default function Philosophy() {
   const philosophies = PHILOSOPHY_ABOUT as PhilosophyProps[];
   return (
     <>
-      <Animated.Box animation="fadeInUp" className="mb-8">
+      <Animated.Box animation="fadeInUp" viewport="aggressive" className="mb-8">
         <h3 className="text-3xl font-bold text-light-text dark:text-dark-text mb-12 text-center">
           Philosophies
         </h3>
