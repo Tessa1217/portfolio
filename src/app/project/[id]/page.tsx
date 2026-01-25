@@ -52,14 +52,21 @@ export default async function ProjectDetailPage({
   return (
     <div className="min-h-screen bg-light-background dark:bg-dark-background py-20">
       <article className="container mx-auto px-6 max-w-4xl">
-        <NavItem
-          as="div"
-          label="← Back to Experience"
-          sectionId="experience"
-          className="inline-flex items-center gap-2 text-light-text dark:text-dark-text hover:opacity-70 transition-opacity mb-8"
-        />
+        <BackNavigation />
         <ClientNotionRenderer recordMap={recordMap} />
+        <BackNavigation />
       </article>
     </div>
+  );
+}
+
+function BackNavigation() {
+  return (
+    <NavItem
+      as="div"
+      label="← Back to Experience"
+      sectionId="experience"
+      className="inline-flex items-center gap-2 text-light-text dark:text-dark-text hover:opacity-70 transition-opacity my-8"
+    />
   );
 }

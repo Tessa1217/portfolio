@@ -9,12 +9,12 @@ type WorkItem = (typeof WORK_EXPERIENCE)[number];
 
 export default function WorkProjects() {
   const [selectedWorkId, setSelectedWorkId] = useState<WorkItem["id"]>(
-    WORK_EXPERIENCE[0].id
+    WORK_EXPERIENCE[0].id,
   );
 
   const projects = useMemo(
     () => WORK_EXPERIENCE.find((w) => w.id === selectedWorkId)?.projects ?? [],
-    [selectedWorkId]
+    [selectedWorkId],
   ) as ProjectInformation[];
 
   const handleWorkCardClick = (id: WorkItem["id"]) => setSelectedWorkId(id);
@@ -33,7 +33,7 @@ export default function WorkProjects() {
       <section className="col-span-12 md:col-span-9 lg:col-span-10">
         <ProjectCardList
           projects={projects}
-          className="w-full max-w-screen-xl mx-auto grid gap-6 grid-cols-[repeat(auto-fit,minmax(300px,1fr))]"
+          className="w-full mx-auto grid gap-6 grid-cols-[repeat(auto-fit,minmax(300px,1fr))]"
         />
       </section>
     </div>
