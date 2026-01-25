@@ -14,7 +14,7 @@ const ProjectCardList = ({ projects, className }: ProjectCardListProps) => {
         <Animated.ListItem
           key={project.id}
           animation="fadeInUp"
-          className="flex justify-center"
+          className="flex justify-center w-full"
         >
           <ProjectCard
             id={project.id}

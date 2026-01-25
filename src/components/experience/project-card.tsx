@@ -32,15 +32,37 @@ export default function ProjectCard({
       {/* Content Container - Flexbox로 내부 레이아웃 제어 */}
       <div className="relative h-full p-6 flex flex-col">
         {/* Type Badge - 고정 영역 */}
-        <div className="shrink-0">
+        <div className="shrink-0 flex flex-row justify-between">
           <span
             className={
-              `inline-block px-3 py-1 rounded-full text-xs font-semibold text-white ` +
+              `inline-flex items-center justify-center px-3 py-1 rounded-full text-xs font-semibold text-white leading-none ` +
               (projectType === "Company" ? "bg-secondary" : "bg-primary")
             }
           >
             {projectType}
           </span>
+          {/* Actions - 고정 영역 */}
+          <div className="shrink-0 flex items-center space-x-2 md:space-x-4">
+            {githubUrl && (
+              <ProjectLink
+                href={githubUrl}
+                linkType="Github"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-light-text dark:text-dark-text hover:text-dark-text-muted dark:hover:text-light-text-muted transition-colors"
+                aria-label="GitHub 페이지 열기"
+                icon={<FaGithub size={30} />}
+              />
+            )}
+            {notionPageId && (
+              <ProjectLink
+                href={`/project/${id}`}
+                linkType="Notion"
+                className="text-light-text dark:text-dark-text hover:text-dark-text-muted dark:hover:text-light-text-muted transition-colors"
+                icon={<SiNotion size={30} />}
+              />
+            )}
+          </div>
         </div>
 
         {/* Title - 고정 영역 */}
@@ -63,29 +85,6 @@ export default function ProjectCard({
               {tag}
             </span>
           ))}
-        </div>
-
-        {/* Actions - 고정 영역 */}
-        <div className="mt-4 shrink-0 flex items-center space-x-4">
-          {githubUrl && (
-            <ProjectLink
-              href={githubUrl}
-              linkType="Github"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-light-text dark:text-dark-text hover:text-dark-text-muted dark:hover:text-light-text-muted transition-colors"
-              aria-label="GitHub 페이지 열기"
-              icon={<FaGithub size={30} />}
-            />
-          )}
-          {notionPageId && (
-            <ProjectLink
-              href={`/project/${id}`}
-              linkType="Notion"
-              className="text-light-text dark:text-dark-text hover:text-dark-text-muted dark:hover:text-light-text-muted transition-colors"
-              icon={<SiNotion size={30} />}
-            />
-          )}
         </div>
       </div>
     </Animated.Card>
