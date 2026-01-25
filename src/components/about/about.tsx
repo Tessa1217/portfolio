@@ -2,18 +2,19 @@ import { Animated } from "@/components/animation";
 import SectionTitle from "@/components/ui/section-title";
 import Philosophy from "@/components/about/philosophy";
 import Strength from "@/components/about/strength";
+import { fadeInUp } from "@/constants/animation/animation";
 
 export default function AboutMe() {
   return (
     <Animated.Section
       id="about"
-      animation="fadeInUp"
       as="section"
-      className="w-full py-20 text-light-text dark:text-dark-text text-center px-4 min-h-svh"
+      viewport="aggressive"
+      className="w-full py-20 text-light-text dark:text-dark-text text-center px-4 min-h-[100svh]"
     >
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
-        <Animated.Box animation="fadeInDown" className="text-center mb-16">
+        <Animated.Box variants={fadeInUp} viewport="aggressive" className="text-center mb-16">
           <SectionTitle title="About Me" />
           <p className="text-lg text-light-text-secondary dark:text-dark-text-secondary max-w-3xl mx-auto">
             더 나은 기술을 끊임없이 탐구하고 프로젝트에 적용하는 과정을 즐기며,

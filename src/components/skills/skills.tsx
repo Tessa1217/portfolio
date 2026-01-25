@@ -8,7 +8,7 @@ export default function Skills() {
     <Animated.Section
       id="skills"
       as="section"
-      className="w-full py-20 text-light-text dark:text-dark-text text-center px-4 min-h-svh"
+      className="w-full py-20 text-light-text dark:text-dark-text text-center px-4 min-h-dvh"
     >
       <div className="container mx-auto">
         <SectionTitle title="Skill Set" />
